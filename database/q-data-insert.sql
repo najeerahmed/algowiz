@@ -10,10 +10,22 @@ insert into Users(username, pw, uname, email, city, state, country, dob, short_d
 insert into Users(username, pw, uname, email, city, state, country, dob, short_desc, points) values ('willasr2', 'willreadbooks0', 'Willa Reed', 'wilard00@gmail.com', 'Denver', 'Colorado', 'United States', '2002-03-22', 'Read a few books on algorithm. Aspire to become a fullstack developer.', 0);
 insert into Users(username, pw, uname, email, city, state, country, dob, short_desc, points) values ('bernman', 'bcardi!', 'Bernard Jackson', 'bernmanson@yahoo.com', 'Jersey City', 'New Jersey', 'United States', '1980-12-15', 'Consider myself an algo expert. Open to questions about algo and anything tech related.', 0);
 
--- insert into Topic relation
+-- insert into Topic relation - assuming start with #6
 insert into Topic (topic_name) value ('Hashing');
 insert into Topic (topic_name) value ('Recursion');
 insert into Topic (topic_name) value ('Sorting');
 insert into Topic (topic_name) value ('Trees');
 insert into Topic (topic_name) value ('Dynamic Programming');
 insert into Topic (topic_name) value ('Graphs');
+
+-- insert into UserStatus relation - assuming start with #11
+insert into UserStatus value(11, 1);
+insert into UserStatus value(12, 1);
+insert into UserStatus value(13, 1);
+insert into UserStatus value(14, 1);
+insert into UserStatus value(15, 1);
+insert into UserStatus value(16, 1);
+insert into UserStatus value(17, 1);
+insert into UserStatus value(18, 1);
+insert into UserStatus value(19, 1);
+insert into UserStatus value(20, 1);
