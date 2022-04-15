@@ -17,3 +17,4 @@ insert into Topic (topic_name) value ('Sorting');
 insert into Topic (topic_name) value ('Trees');
 insert into Topic (topic_name) value ('Dynamic Programming');
 insert into Topic (topic_name) value ('Graphs');
+insert into Topic (topic_name) value ('Graphs');
