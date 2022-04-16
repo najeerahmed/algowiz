@@ -99,3 +99,35 @@ insert into UserStatus value(18, 1);
 insert into UserStatus value(19, 1);
 insert into UserStatus value(20, 1);
 
+
+-- q1 - id: 16
+insert into Questions(topic_id,user_id,title,q_text,q_time, resolved)
+values ('7','12','Types of Hashing','What are the different types of hash for hash map?','2022-01-13 9:03:02', 0);
+-- a1
+insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time)
+values ('17','16',0,0,0,'There are two well known types which are hash with chaining and hash with open addressing.', '2022-01-15 20:15:20');
+insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time)
+values ('18','16',0,0,0,
+        'Yeah and just wanted to point out that for open addressing, the number of elements being inserted into the hash map is less than the number of positions of available on the hash map. This is a good factor to consider which type of hashing you’d want to use.',
+        '2022-01-15 22:00:15');
+
+-- q2 - id: 17
+insert into Questions(topic_id,user_id,title,q_text,q_time, resolved)
+values ('7','19','Probe Sequences','What are probe sequences? And are there more than one type of probe sequences?','2021-03-19 10:21:20', 0);
+-- a1
+insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time)
+values ('14','17',0,0,0,
+        'Probe sequences is a method used to probe through the hash map to see if there are any space available left to perform an insertion… There’s only one type of probe sequence known as linear probe sequence ', '2021-03-20 09:00:20');
+-- a2
+insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time)
+values ('15','17',0,0,0,
+        'Probe sequence is a method used in hashing with open addressing. Because in an open addressing hashing we can’t build chains off of the hash table, we use the probe technique to find a location on the table to insert or find an element. There are several types of probe sequence: Linear, Quadratic, Double Hashing, etc.',
+        '2021-03-20 14:25:01');
+
+-- q3 - id: 18
+insert into Questions(topic_id,user_id,title,q_text,q_time, resolved)
+values ('7','16','Advantage of Hashmap','What are the advantages that hashmap has over linked list?','2022-02-12 15:12:20', 0);
+
+insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time)
+values ('18','18',0,0,0,'Basic operations on linked list including Search, Insert and Delete take O(n) or linear time to perform. However, when you use Hashmap and implement it carefully, these operations take O(1) or constant time to perform. This is a significant improvement in time complexity.',
+        '2022-02-13 20:00:20');
