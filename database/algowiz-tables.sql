@@ -1,4 +1,6 @@
 -- Drop any if already present
+drop table if exists TopicHierarchy CASCADE;
+drop table if exists UserThumbs CASCADE;
 drop table if exists Answers CASCADE;
 drop table if exists Questions CASCADE;
 drop table if exists UserStatus CASCADE;
