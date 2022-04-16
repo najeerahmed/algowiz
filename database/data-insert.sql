@@ -116,6 +116,13 @@ insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('17','29',0,0,0, 'Hey OP. It would be best if you can post a picture of the graph but from what I read you are understanding the concept wrongly. SCC doesn’t refer to the entire graph but rather is a maximal set of vertices such that directed paths exist between every pair of vertices. A graph doesn’t need to be entirely strongly connected to have strongly connected component.', '2022-01-08 16:41:38');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('18','29',0,0,0, 'Basically once you lay out the nodes in a topological order the nodes should be such that set (u,v) has vertex u before v', '2022-04-02 09:02:53');
 
+-- inserting StatusDict
+insert into StatusDict (status_title, point_threshold) value ('Beginner', 0);
+insert into StatusDict (status_title, point_threshold) value ('Amateur', 50);
+insert into StatusDict (status_title, point_threshold) value ('Intermediate', 300);
+insert into StatusDict (status_title, point_threshold) value ('Expert', 800);
+insert into StatusDict (status_title, point_threshold) value ('Wizard', 2000);
+
 -- inserting UserStatus
 insert into UserStatus values (1, 1);
 insert into UserStatus values (2, 1);
