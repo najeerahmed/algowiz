@@ -69,7 +69,7 @@ Create table Questions(
     question_id integer primary key auto_increment,
     topic_id integer not null,
     user_id integer not null,
-    title varchar(30) not null,
+    title varchar(500) not null,
     q_text varchar(2000) not null,
     q_time datetime not null,
 
