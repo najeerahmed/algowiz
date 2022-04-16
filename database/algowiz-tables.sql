@@ -29,18 +29,12 @@ Create table Users(
     points integer not null
 );
 
--- Insert into Users here:
-INSERT INTO Users(username,pw,uname,email,city,state,country,dob,short_desc,points) VALUES ('chiefkheif','password1','Najeer Ahmed', 'nka232@nyu.edu', 'Brooklyn', 'New York', 'United States', '1994-03-08','this is a short description.', 0);
-
 -- Create StatusDict
 Create table StatusDict(
     status_id integer primary key auto_increment,
     status_title varchar(30) not null,
     point_threshold integer not null
 );
-
--- Insert into StatusDict here:
-INSERT INTO StatusDict(status_title,point_threshold) VALUES ('Beginner', 0);
 
 -- Create UserStatus
 Create table UserStatus(
@@ -51,17 +45,11 @@ Create table UserStatus(
     foreign key (status_id) references StatusDict(status_id)
 );
 
--- Insert into UserStatus
-INSERT INTO UserStatus(user_id, status_id) VALUES ('1','1');
-
 -- Create Topic
 Create table Topic(
     topic_id integer primary key auto_increment,
     topic_name varchar(50) not null
 );
-
--- Insert into Topic
-INSERT INTO Topic(topic_name) VALUES ('The beginnings');
 
 -- Questions
 Create table Questions(
@@ -76,9 +64,6 @@ Create table Questions(
     foreign key (user_id) references Users(user_id)
 );
 
--- insert into Questions
-INSERT INTO Questions(question_id,topic_id,user_id,title,q_text,q_time) VALUES ('1','1','1','What is an algorithm?','See title.','2022-04-14 15:08:32');
-
 create table Answers(
     answer_id integer primary key auto_increment,
     user_id integer not null,
@@ -92,9 +77,6 @@ create table Answers(
     foreign key (user_id) references Users(user_id),
     foreign key (question_id) references Questions(question_id)
 );
-
--- insert into Answers
-INSERT INTO Answers(answer_id,user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) VALUES ('1','1','1',0,0,0,'An algorithm is a way of life', '2022-04-14 15:19:00');
 
 -- Create UserThumbs relation
 create table UserThumbs(
