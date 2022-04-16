@@ -1,3 +1,4 @@
+-- Quoc data insertions
 -- insert into Users relation
 insert into Users(username, pw, uname, email, city, state, country, dob, short_desc, points) values ('kendalcalm', 'heavenlychild', 'Kendal Combs', 'kcbs@gmail.com', 'New York', 'NY', 'United States', '1995-05-14', 'Computer Science graduate from an Ivy League. Front end developer. JS, React, you name it ;)', 0);
 insert into Users(username, pw, uname, email, city, state, country, dob, short_desc, points) values ('ashaetsy', 'blingbling123*', 'Asha Roberson', 'ar231@nyu.edu', 'New York', 'NY', 'United States', '2003-08-24', 'Liberal Arts major. Self taught developer. Currently learning algorithm and need help.', 0);
