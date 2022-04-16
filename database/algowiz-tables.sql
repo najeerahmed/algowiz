@@ -32,7 +32,6 @@ Create table Users(
 -- Insert into Users here:
 INSERT INTO Users(username,pw,uname,email,city,state,country,dob,short_desc,points) VALUES ('chiefkheif','password1','Najeer Ahmed', 'nka232@nyu.edu', 'Brooklyn', 'New York', 'United States', '1994-03-08','this is a short description.', 0);
 
-
 -- Create StatusDict
 Create table StatusDict(
     status_id integer primary key auto_increment,
@@ -96,3 +95,22 @@ create table Answers(
 
 -- insert into Answers
 INSERT INTO Answers(answer_id,user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) VALUES ('1','1','1',0,0,0,'An algorithm is a way of life', '2022-04-14 15:19:00');
+
+-- Create UserThumbs relation
+create table UserThumbs(
+    user_id integer,
+    answer_id integer,
+    thumbs_up boolean,
+    thumbs_down boolean,
+    primary key(user_id, answer_id),
+    foreign key (user_id) references Users(user_id),
+    foreign key (answer_id) references Answers(answer_id)
+);
+
+create table TopicHierarchy (
+    topic_id integer, 
+    subtopic_id integer,
+    primary key(topic_id, subtopic_id),
+    foreign key (topic_id) references Topic(topic_id),
+    foreign key (subtopic_id) references Topic(topic_id)
+);
