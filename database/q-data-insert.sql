@@ -18,6 +18,7 @@ insert into Topic (topic_name) value ('Sorting');
 insert into Topic (topic_name) value ('Trees');
 insert into Topic (topic_name) value ('Dynamic Programming');
 insert into Topic (topic_name) value ('Graphs');
+insert into Topic(topic_name) value ('Red Black Tree');
 
 -- insert into UserStatus relation - assuming start with #11
 insert into UserStatus value(11, 1);
