@@ -21,21 +21,21 @@ insert into Topic (topic_name) value ('Quicksort');
 insert into Topic (topic_name) value ('Augmented BST');
 
 -- insert into Questions
-INSERT INTO Questions(topic_id,user_id,title,q_text,q_time) VALUES ('1','1','What is an algorithm?','See title.','2021-12-17 01:45:26');
-INSERT INTO Questions(topic_id,user_id,title,q_text,q_time) VALUES ('1','10','What is an algorithm?','See title.','2021-12-18 19:32:21');
-INSERT INTO Questions(topic_id,user_id,title,q_text,q_time) VALUES ('2','2','Is n^200 higher order than 2^n?','I was wondering if there is a number which this is true for.','2021-12-19 11:32:51');
-INSERT INTO Questions(topic_id,user_id,title,q_text,q_time) VALUES ('2','2','what is the difference between big-oh and big-omega?','','2021-12-28 03:44:00');
-INSERT INTO Questions(topic_id,user_id,title,q_text,q_time) VALUES ('3','3','What is a selection algorithm, exactly?','I am not sure what we are selecting','2022-01-13 16:59:54');
-INSERT INTO Questions(topic_id,user_id,title,q_text,q_time) VALUES ('3','3','How does the runtime of randomized-select differ from select?','In terms of runtime, which is faster?','2022-01-18 14:03:02');
-INSERT INTO Questions(topic_id,user_id,title,q_text,q_time) VALUES ('3','4','Why does picking pivots at random result in a worse runtime?','See title.','2022-01-27 21:10:06');
-INSERT INTO Questions(topic_id,user_id,title,q_text,q_time) VALUES ('4','4','What is the runtime of building a heap?','','2022-02-11 18:11:30');
-INSERT INTO Questions(topic_id,user_id,title,q_text,q_time) VALUES ('4','5','Why is a bottom-up method faster when building a heap?','See title.','2022-02-22 00:12:26');
-INSERT INTO Questions(topic_id,user_id,title,q_text,q_time) VALUES ('4','5','What is a heap?','See title.','2022-03-02 10:44:03');
-INSERT INTO Questions(topic_id,user_id,title,q_text,q_time) VALUES ('4','6','Is this a heap?','An array that is sorted in decreasing order','2022-03-07 15:14:11');
-INSERT INTO Questions(topic_id,user_id,title,q_text,q_time) VALUES ('5','6','What is considered a bad split vs. a good split in quicksort?','See title.','2022-03-09 23:35:07');
-INSERT INTO Questions(topic_id,user_id,title,q_text,q_time) VALUES ('5','7','Why is quicksort vulnerable to an AC attack?','See title.','2022-03-12 23:49:11');
-INSERT INTO Questions(topic_id,user_id,title,q_text,q_time) VALUES ('6','8','How do we find the minimum gap in O(n)?','See title.','2022-03-17 17:11:28');
-INSERT INTO Questions(topic_id,user_id,title,q_text,q_time) VALUES ('6','9','How do subtree sizes change after a rotation?','See title.','2022-03-20 08:27:15');
+INSERT INTO Questions(topic_id,user_id,title,q_text,q_time, resolved) VALUES ('1','1','What is an algorithm?','See title.','2021-12-17 01:45:26', 0);
+INSERT INTO Questions(topic_id,user_id,title,q_text,q_time, resolved) VALUES ('1','10','What is an algorithm?','See title.','2021-12-18 19:32:21', 0);
+INSERT INTO Questions(topic_id,user_id,title,q_text,q_time, resolved) VALUES ('2','2','Is n^200 higher order than 2^n?','I was wondering if there is a number which this is true for.','2021-12-19 11:32:51', 0);
+INSERT INTO Questions(topic_id,user_id,title,q_text,q_time, resolved) VALUES ('2','2','what is the difference between big-oh and big-omega?','','2021-12-28 03:44:00', 0);
+INSERT INTO Questions(topic_id,user_id,title,q_text,q_time, resolved) VALUES ('3','3','What is a selection algorithm, exactly?','I am not sure what we are selecting','2022-01-13 16:59:54', 0);
+INSERT INTO Questions(topic_id,user_id,title,q_text,q_time, resolved) VALUES ('3','3','How does the runtime of randomized-select differ from select?','In terms of runtime, which is faster?','2022-01-18 14:03:02', 0);
+INSERT INTO Questions(topic_id,user_id,title,q_text,q_time, resolved) VALUES ('3','4','Why does picking pivots at random result in a worse runtime?','See title.','2022-01-27 21:10:06', 0);
+INSERT INTO Questions(topic_id,user_id,title,q_text,q_time, resolved) VALUES ('4','4','What is the runtime of building a heap?','','2022-02-11 18:11:30', 0);
+INSERT INTO Questions(topic_id,user_id,title,q_text,q_time, resolved) VALUES ('4','5','Why is a bottom-up method faster when building a heap?','See title.','2022-02-22 00:12:26', 0);
+INSERT INTO Questions(topic_id,user_id,title,q_text,q_time, resolved) VALUES ('4','5','What is a heap?','See title.','2022-03-02 10:44:03', 0);
+INSERT INTO Questions(topic_id,user_id,title,q_text,q_time, resolved) VALUES ('4','6','Is this a heap?','An array that is sorted in decreasing order','2022-03-07 15:14:11', 0);
+INSERT INTO Questions(topic_id,user_id,title,q_text,q_time, resolved) VALUES ('5','6','What is considered a bad split vs. a good split in quicksort?','See title.','2022-03-09 23:35:07', 0);
+INSERT INTO Questions(topic_id,user_id,title,q_text,q_time, resolved) VALUES ('5','7','Why is quicksort vulnerable to an AC attack?','See title.','2022-03-12 23:49:11', 0);
+INSERT INTO Questions(topic_id,user_id,title,q_text,q_time, resolved) VALUES ('6','8','How do we find the minimum gap in O(n)?','See title.','2022-03-17 17:11:28', 0);
+INSERT INTO Questions(topic_id,user_id,title,q_text,q_time, resolved) VALUES ('6','9','How do subtree sizes change after a rotation?','See title.','2022-03-20 08:27:15', 0);
 
 -- insert into Answers
 INSERT INTO Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) VALUES ('1','2',0,0,0,'An algorithm is a way of life', '2021-12-18 22:27:34');
@@ -59,6 +59,7 @@ INSERT INTO Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text
 INSERT INTO Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) VALUES ('9','13',0,0,0,'The worst case runtime of quicksort is O(n^2), therefore in an algorithmic complexity attack we may be receiving inputs in O(n) that take O(n^2) time to process. The result is that the system resources are overused.', '2022-03-15 05:05:26');
 INSERT INTO Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) VALUES ('10','14',0,0,0,'You can do an inorder traversal of the tree, then iterate through the resulting array and calculate the gap between each pair. Storing the minimum as you go along.', '2022-03-17 22:16:01');
 INSERT INTO Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) VALUES ('1','15',0,0,0,'For example, if we are rotating about B, we can simply update A.size to 2+x+y+z and B.size to 1+y+z', '2022-03-27 05:58:01');
+
 
 -- Quoc data insertions
 -- insert into Users relation
