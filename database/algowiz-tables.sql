@@ -17,7 +17,7 @@ Create table Users(
     -- user_id MEDIUMINT NOT NULL AUTO_INCREMENT
     -- primary key (user_id)
 
-    username varchar(20) not null,
+    username varchar(20) unique not null,
     pw varchar(24) not null,
     uname varchar(50) not null,
     email varchar(50) not null,
