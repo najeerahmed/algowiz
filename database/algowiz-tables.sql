@@ -59,6 +59,7 @@ Create table Questions(
     title varchar(500) not null,
     q_text varchar(2000) not null,
     q_time datetime not null,
+    resolved boolean not null,
 
     foreign key (topic_id) references Topic(topic_id),
     foreign key (user_id) references Users(user_id)
