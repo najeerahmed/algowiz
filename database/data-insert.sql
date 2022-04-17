@@ -147,10 +147,10 @@ insert into UserStatus value(19, 1);
 insert into UserStatus value(20, 1);
 
 -- insert into TopicHierarchy
-insert into TopicHierarchy values (10, 6);
+insert into TopicHierarchy values (6, 10);
 -- insert into TopicHierarchy values (10, 13); -- Commenting this out. Currently we have 12 topics, think you mentioned something about DP being a subtopic of something
-insert into TopicHierarchy values (10, 4);
-insert into TopicHierarchy values (9, 5);
+insert into TopicHierarchy values (4, 10);
+insert into TopicHierarchy values (5, 9);
 
 -- inser into UserThumbs
 insert into UserThumbs(user_id, answer_id, thumbs) values (1, 34, 1);
