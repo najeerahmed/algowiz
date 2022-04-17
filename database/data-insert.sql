@@ -138,7 +138,7 @@ insert into UserStatus values (10, 1);
 insert into UserStatus value(11, 1);
 insert into UserStatus value(12, 1);
 insert into UserStatus value(13, 1);
-insert into UserStatus value(14, 3);
+insert into UserStatus value(14, 1);
 insert into UserStatus value(15, 1);
 insert into UserStatus value(16, 1);
 insert into UserStatus value(17, 1);
@@ -172,7 +172,7 @@ insert into UserThumbs(user_id, answer_id, thumbs) values (16, 34, 1);
 insert into UserThumbs(user_id, answer_id, thumbs) values (17, 34, 1);
 insert into UserThumbs(user_id, answer_id, thumbs) values (18, 34, 1);
 insert into UserThumbs(user_id, answer_id, thumbs) values (19, 34, 1);
-insert into UserThumbs(user_id, answer_id, thumbs) values (10, 34, 0);
+insert into UserThumbs(user_id, answer_id, thumbs) values (20, 34, 0);
 
 
 
