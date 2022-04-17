@@ -114,7 +114,7 @@ insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('19','27',0,0,0, 'Definitely. And just to add to the above hint, you can use a 2D array to memorize the longest subsequence.', '2021-11-13 11:32:57');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('18','28',0,0,0, 'Yes you can use the Bread First Search also known as BFS algorithm to solve this.', '2022-01-03 11:50:09');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('17','29',0,0,0, 'Hey OP. It would be best if you can post a picture of the graph but from what I read you are understanding the concept wrongly. SCC doesn’t refer to the entire graph but rather is a maximal set of vertices such that directed paths exist between every pair of vertices. A graph doesn’t need to be entirely strongly connected to have strongly connected component.', '2022-01-08 16:41:38');
-insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('18','29',0,0,0, 'Basically once you lay out the nodes in a topological order the nodes should be such that set (u,v) has vertex u before v', '2022-04-02 09:02:53');
+insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('18','30',0,0,0, 'Basically once you lay out the nodes in a topological order the nodes should be such that set (u,v) has vertex u before v', '2022-04-02 09:02:53');
 
 -- inserting StatusDict
 insert into StatusDict (status_title, point_threshold) value ('Beginner', 0);
@@ -145,6 +145,11 @@ insert into UserStatus value(18, 1);
 insert into UserStatus value(19, 1);
 insert into UserStatus value(20, 1);
 
+-- insert into TopicHierarchy
+insert into TopicHierarchy values (10, 6);
+insert into TopicHierarchy values (10, 13);
+insert into TopicHierarchy values (10, 4);
+insert into TopicHierarchy values (9, 5);
 -- Add FULLTEXT functionality for Questions
 CREATE FULLTEXT INDEX SearchQuestions ON Questions(title,q_text);
 CREATE FULLTEXT INDEX SearchQuestionsTitle ON Questions(title);
