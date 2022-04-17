@@ -69,7 +69,9 @@ insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('1
 insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('12','16','Strongly Connected Component', 'I’m struggling to understand the concept of strongly connected components within a graph. One of my practice problem is asking me to determine strongly connected component but when I check the graph there are pair of vertices that doesn’t exist a two way path between each other but the solution says that there do exist strongly connected components in the graph. Can someone explain this to me?', '2022-01-08 13:12:58', 0);
 insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('12','15','Topological Order', 'When sorting nodes in graph what does topological order mean?', '2022-04-01 22:10:05', 0);
 
+
 -- insert into Answers
+
 INSERT INTO Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) VALUES ('1','2',0,0,0,'An algorithm is a way of life', '2021-12-18 22:27:34');
 INSERT INTO Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) VALUES ('10','1',0,0,0,'A procedure that takes some input and then produces some required output.', '2021-12-18 23:17:14');
 INSERT INTO Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) VALUES ('2','3',0,0,0,'No.', '2021-12-25 05:23:54');
@@ -91,7 +93,6 @@ INSERT INTO Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text
 INSERT INTO Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) VALUES ('9','13',0,0,0,'The worst case runtime of quicksort is O(n^2), therefore in an algorithmic complexity attack we may be receiving inputs in O(n) that take O(n^2) time to process. The result is that the system resources are overused.', '2022-03-15 05:05:26');
 INSERT INTO Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) VALUES ('10','14',0,0,0,'You can do an inorder traversal of the tree, then iterate through the resulting array and calculate the gap between each pair. Storing the minimum as you go along.', '2022-03-17 22:16:01');
 INSERT INTO Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) VALUES ('1','15',0,0,0,'For example, if we are rotating about B, we can simply update A.size to 2+x+y+z and B.size to 1+y+z', '2022-03-27 05:58:01');
-
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('17','16',0,0,0,'There are two well known types which are hash with chaining and hash with open addressing.', '2022-01-15 20:15:20');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('18','16',0,0,0, 'Yeah and just wanted to point out that for open addressing, the number of elements being inserted into the hash map is less than the number of positions of available on the hash map. This is a good factor to consider which type of hashing you’d want to use.', '2022-01-15 22:00:15');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('14','17',0,0,0, 'Probe sequences is a method used to probe through the hash map to see if there are any space available left to perform an insertion… There’s only one type of probe sequence known as linear probe sequence ', '2021-03-20 09:00:20');
@@ -104,7 +105,7 @@ insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('17','21',0,0,0, 'It basically can’t however you can modify the numbers and round them to integers to use radix sort to perform sorting on them. This is because radix sort also incorporate counting sort in the algorithm to sort the numbers.', '2022-02-02 13:05:15');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('14','22',0,0,0, 'Yes it is. A simple algorithm to finding the min value using a tree is to get all the leaf nodes and take the min of their value.', '2022-02-22 08:22:30');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('13','22',0,0,0, 'No it is not. The min value is always to the far left of the tree, but that node itself can have a rigth child which makes it not a leaf node.', '2022-02-22 15:02:22');
-insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('14','23',500,0,0, 'Yes you can. With in order, you know that the value given is always the min value within the tree / subtree you’re dealing with. With pre-order, you know that the node given is the root node of the tree / subtree, and with post-order, you know that root node is at the end of the given printed traversal. So from these facts you can use to reconstruct the tree. I suggest you create a tree, perform the traversals and then reconstruct the tree to see what I mean.', '2022-09-15 17:02:28');
+insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('14','23',18,0,0, 'Yes you can. With in order, you know that the value given is always the min value within the tree / subtree you’re dealing with. With pre-order, you know that the node given is the root node of the tree / subtree, and with post-order, you know that root node is at the end of the given printed traversal. So from these facts you can use to reconstruct the tree. I suggest you create a tree, perform the traversals and then reconstruct the tree to see what I mean.', '2022-09-15 17:02:28');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('17','24',0,0,0, 'The worst case runtime to repair the RB tree is O(logn) since the worst case requires the reparation to traverse up to the root and perform a constant number of operations.', '2022-02-04 17:09:11');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('12','25',0,0,0, 'Should be 2^2bh(x) – 1.', '2022-02-02 19:43:58');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('15','25',0,0,0, 'Because the min height of a red black tree is the height of the black height itself, the minimum number of nodes given the black height should be 2^bh(x) – 1', '2022-02-03 07:51:48');
@@ -150,6 +151,31 @@ insert into TopicHierarchy values (10, 6);
 -- insert into TopicHierarchy values (10, 13); -- Commenting this out. Currently we have 12 topics, think you mentioned something about DP being a subtopic of something
 insert into TopicHierarchy values (10, 4);
 insert into TopicHierarchy values (9, 5);
+
+-- inser into UserThumbs
+insert into UserThumbs(user_id, answer_id, thumbs) values (1, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (2, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (3, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (4, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (5, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (6, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (7, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (8, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (9, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (10, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (11, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (12, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (13, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (14, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (15, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (16, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (17, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (18, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (19, 34, 1);
+insert into UserThumbs(user_id, answer_id, thumbs) values (10, 34, 0);
+
+
+
 -- Add FULLTEXT functionality for Questions
 CREATE FULLTEXT INDEX SearchQuestions ON Questions(title,q_text);
 CREATE FULLTEXT INDEX SearchQuestionsTitle ON Questions(title);
