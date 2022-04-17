@@ -85,8 +85,8 @@ create table Answers(
 create table UserThumbs(
     user_id integer,
     answer_id integer,
-    thumbs_up boolean,
-    thumbs_down boolean,
+    thumbs boolean,
+    
     primary key(user_id, answer_id),
     foreign key (user_id) references Users(user_id),
     foreign key (answer_id) references Answers(answer_id)
