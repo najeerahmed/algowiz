@@ -61,9 +61,9 @@ insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('9
 insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('9','13','Radix Sort and Decimal Numbers', 'Can Radix sort be used on decimal numbers?', '2022-02-01 12:02:32', 0);
 insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('10','20','Min value at leaf', 'Is the min value always at the leaf of the tree?', '2022-02-04 16:53:22', 0);
 insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('10','12','Reconstruct trees based on traversal', 'Can you reconstruct a binary tree given its preorder traversal, inorder traversal or postorder traversal?', '2021-09-15 15:22:55', 0);
-insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('13','16','RB Tree reparation runtime', 'What is the worst runtime to repair a red black tree?', '2022-02-04 16:53:22', 0);
-insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('13','16','Min number of nodes in RB Tree', 'What is a minimum number of nodes given the black height of the RB tree?', '2022-02-02 18:24:21', 0);
-insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('13','17','Height of RB Tree', 'What is the height of a red black tree?', '2022-03-12 21:12:55', 0);
+insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('10','16','RB Tree reparation runtime', 'What is the worst runtime to repair a red black tree?', '2022-02-04 16:53:22', 0);
+insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('10','16','Min number of nodes in RB Tree', 'What is a minimum number of nodes given the black height of the RB tree?', '2022-02-02 18:24:21', 0);
+insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('10','17','Height of RB Tree', 'What is the height of a red black tree?', '2022-03-12 21:12:55', 0);
 insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('11','11','Longest Palindromic Sequence', 'Hi. I’m trying to solve the “Longest Palindromic Subsequence” problem but my brute force solution runtime is really long when I try to put an input for string of length 40 or above. Is there a more efficient way to solve this problem?', '2021-11-12 23:11:15', 0);
 insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('12','14','Graph shortest distance', 'Is there an algorithm for graph to determine the shortest path from one node to another?', '2022-01-03 10:25:38', 0);
 insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('12','16','Strongly Connected Component', 'I’m struggling to understand the concept of strongly connected components within a graph. One of my practice problem is asking me to determine strongly connected component but when I check the graph there are pair of vertices that doesn’t exist a two way path between each other but the solution says that there do exist strongly connected components in the graph. Can someone explain this to me?', '2022-01-08 13:12:58', 0);
@@ -108,13 +108,20 @@ insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('17','24',0,0,0, 'The worst case runtime to repair the RB tree is O(logn) since the worst case requires the reparation to traverse up to the root and perform a constant number of operations.', '2022-02-04 17:09:11');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('12','25',0,0,0, 'Should be 2^2bh(x) – 1.', '2022-02-02 19:43:58');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('15','25',0,0,0, 'Because the min height of a red black tree is the height of the black height itself, the minimum number of nodes given the black height should be 2^bh(x) – 1', '2022-02-03 07:51:48');
-insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('14','26',0,0,0, 'The height of the red black tree depends on the longest number of edges within the tree so basically we can call this number ‘h’.', '2022-02-02 22:43:58')
+insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('14','26',0,0,0, 'The height of the red black tree depends on the longest number of edges within the tree so basically we can call this number ‘h’.', '2022-02-02 22:43:58');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('18','26',0,0,0, 'Red black tree is a balanced tree so its height is always O(logn)', '2022-02-03 06:22:00');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('18','27',0,0,0, 'So you can improve the runtime of this problem with dynamic programming. A hint is to consider two cases. First case is when considering the first and last characters and they are the same. Hence if the substring between them are the same then the subsequence would be the palindromic subsequence between the two plus two characters to include the ones that we are considering. Then the second case when they are not the same. Then we have to consider the subsequence after the first character and the subsequence before the last character considering. Hope this helps.', '2021-11-13 05:22:42');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('19','27',0,0,0, 'Definitely. And just to add to the above hint, you can use a 2D array to memorize the longest subsequence.', '2021-11-13 11:32:57');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('18','28',0,0,0, 'Yes you can use the Bread First Search also known as BFS algorithm to solve this.', '2022-01-03 11:50:09');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('17','29',0,0,0, 'Hey OP. It would be best if you can post a picture of the graph but from what I read you are understanding the concept wrongly. SCC doesn’t refer to the entire graph but rather is a maximal set of vertices such that directed paths exist between every pair of vertices. A graph doesn’t need to be entirely strongly connected to have strongly connected component.', '2022-01-08 16:41:38');
 insert into Answers(user_id,question_id,thumbs_up,thumbs_down,best_answer,a_text,a_time) values ('18','30',0,0,0, 'Basically once you lay out the nodes in a topological order the nodes should be such that set (u,v) has vertex u before v', '2022-04-02 09:02:53');
+
+-- inserting StatusDict
+insert into StatusDict (status_title, point_threshold) value ('Beginner', 0);
+insert into StatusDict (status_title, point_threshold) value ('Amateur', 50);
+insert into StatusDict (status_title, point_threshold) value ('Intermediate', 300);
+insert into StatusDict (status_title, point_threshold) value ('Expert', 800);
+insert into StatusDict (status_title, point_threshold) value ('Wizard', 2000);
 
 -- inserting UserStatus
 insert into UserStatus values (1, 1);
@@ -127,7 +134,6 @@ insert into UserStatus values (7, 1);
 insert into UserStatus values (8, 1);
 insert into UserStatus values (9, 1);
 insert into UserStatus values (10, 1);
-
 insert into UserStatus value(11, 1);
 insert into UserStatus value(12, 1);
 insert into UserStatus value(13, 1);
@@ -144,3 +150,11 @@ insert into TopicHierarchy values (10, 6);
 insert into TopicHierarchy values (10, 13);
 insert into TopicHierarchy values (10, 4);
 insert into TopicHierarchy values (9, 5);
+-- Add FULLTEXT functionality for Questions
+CREATE FULLTEXT INDEX SearchQuestions ON Questions(title,q_text);
+CREATE FULLTEXT INDEX SearchQuestionsTitle ON Questions(title);
+CREATE FULLTEXT INDEX SearchQuestionsText ON Questions(q_text);
+
+-- Add FULLTEXT functionality for Answers
+CREATE FULLTEXT INDEX SearchAnswers ON Answers(a_text);
+

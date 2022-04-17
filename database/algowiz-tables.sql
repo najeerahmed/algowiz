@@ -1,4 +1,6 @@
 -- Drop any if already present
+drop table if exists TopicHierarchy CASCADE;
+drop table if exists UserThumbs CASCADE;
 drop table if exists Answers CASCADE;
 drop table if exists Questions CASCADE;
 drop table if exists UserStatus CASCADE;
@@ -60,10 +62,12 @@ Create table Questions(
     q_text varchar(2000) not null,
     q_time datetime not null,
     resolved boolean not null,
-
+    
     foreign key (topic_id) references Topic(topic_id),
     foreign key (user_id) references Users(user_id)
 );
+
+
 
 create table Answers(
     answer_id integer primary key auto_increment,
@@ -74,17 +78,18 @@ create table Answers(
     best_answer boolean not null,
     a_text varchar(2000) not null,
     a_time datetime not null,
-
+    
     foreign key (user_id) references Users(user_id),
     foreign key (question_id) references Questions(question_id)
 );
+
 
 -- Create UserThumbs relation
 create table UserThumbs(
     user_id integer,
     answer_id integer,
-    thumbs_up boolean,
-    thumbs_down boolean,
+    thumbs boolean,
+    
     primary key(user_id, answer_id),
     foreign key (user_id) references Users(user_id),
     foreign key (answer_id) references Answers(answer_id)
