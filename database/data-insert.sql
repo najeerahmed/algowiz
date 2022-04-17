@@ -61,9 +61,9 @@ insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('9
 insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('9','13','Radix Sort and Decimal Numbers', 'Can Radix sort be used on decimal numbers?', '2022-02-01 12:02:32', 0);
 insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('10','20','Min value at leaf', 'Is the min value always at the leaf of the tree?', '2022-02-04 16:53:22', 0);
 insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('10','12','Reconstruct trees based on traversal', 'Can you reconstruct a binary tree given its preorder traversal, inorder traversal or postorder traversal?', '2021-09-15 15:22:55', 0);
-insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('13','16','RB Tree reparation runtime', 'What is the worst runtime to repair a red black tree?', '2022-02-04 16:53:22', 0);
-insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('13','16','Min number of nodes in RB Tree', 'What is a minimum number of nodes given the black height of the RB tree?', '2022-02-02 18:24:21', 0);
-insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('13','17','Height of RB Tree', 'What is the height of a red black tree?', '2022-03-12 21:12:55', 0);
+insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('10','16','RB Tree reparation runtime', 'What is the worst runtime to repair a red black tree?', '2022-02-04 16:53:22', 0);
+insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('10','16','Min number of nodes in RB Tree', 'What is a minimum number of nodes given the black height of the RB tree?', '2022-02-02 18:24:21', 0);
+insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('10','17','Height of RB Tree', 'What is the height of a red black tree?', '2022-03-12 21:12:55', 0);
 insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('11','11','Longest Palindromic Sequence', 'Hi. I’m trying to solve the “Longest Palindromic Subsequence” problem but my brute force solution runtime is really long when I try to put an input for string of length 40 or above. Is there a more efficient way to solve this problem?', '2021-11-12 23:11:15', 0);
 insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('12','14','Graph shortest distance', 'Is there an algorithm for graph to determine the shortest path from one node to another?', '2022-01-03 10:25:38', 0);
 insert into Questions(topic_id,user_id,title,q_text,q_time, resolved) values ('12','16','Strongly Connected Component', 'I’m struggling to understand the concept of strongly connected components within a graph. One of my practice problem is asking me to determine strongly connected component but when I check the graph there are pair of vertices that doesn’t exist a two way path between each other but the solution says that there do exist strongly connected components in the graph. Can someone explain this to me?', '2022-01-08 13:12:58', 0);
@@ -134,7 +134,6 @@ insert into UserStatus values (7, 1);
 insert into UserStatus values (8, 1);
 insert into UserStatus values (9, 1);
 insert into UserStatus values (10, 1);
-
 insert into UserStatus value(11, 1);
 insert into UserStatus value(12, 1);
 insert into UserStatus value(13, 1);
@@ -145,3 +144,12 @@ insert into UserStatus value(17, 1);
 insert into UserStatus value(18, 1);
 insert into UserStatus value(19, 1);
 insert into UserStatus value(20, 1);
+
+-- Add FULLTEXT functionality for Questions
+CREATE FULLTEXT INDEX SearchQuestions ON Questions(title,q_text);
+CREATE FULLTEXT INDEX SearchQuestionsTitle ON Questions(title);
+CREATE FULLTEXT INDEX SearchQuestionsText ON Questions(q_text);
+
+-- Add FULLTEXT functionality for Answers
+CREATE FULLTEXT INDEX SearchAnswers ON Answers(a_text);
+
