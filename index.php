@@ -10,8 +10,9 @@
 <body>
     <img id="logo" src="assets/algo-wiz-logo.png"/>
     <form method="POST" action="sign_in.php">
-        <input type="username" name="username" placeholder="Enter Username"/>
-        <input type="password" name="password" placeholder="Enter Password"/>
-        <button>Login</button>
+        <input type="username" name="username" placeholder="Enter Username" required/>
+        <input type="password" name="password" placeholder="Enter Password"required/>
+        <button>LOGIN</button>
     </form>
+    <a id="register-account">register an account</a>
 </body>

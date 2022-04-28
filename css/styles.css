@@ -1,6 +1,7 @@
 html {
     width: 100%;
     height: 100%;
+    font-family: Verdana;
 
 }
 
@@ -11,19 +12,47 @@ body, form {
     padding: 0px;
     justify-content: center;
     align-items: center;
+    gap: 5px;
 }
 
 body {
     width: 100%;
     height: 100%;
+    background: linear-gradient(#6A3190, #FBC200);
 }
 
 form {
     gap: 5px;
 }
 
+input {
+    border-color: #440A5F;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
 input:focus {
-    outline-color: goldenrod;
+    outline-color: #FBC200;
+    outline-width: 1px;
+}
+
+button {
+    font-family: inherit;
+    border-radius: 10px;
+    background-color: white;
+    color: #BFC6CD;
+    background-color: #6A3190;
+    border-color: #440A5F;
+    margin-top: 5px;
+    padding: 5px;
+    transition-duration: 0.5s;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #FBC200;
+    background-color: #440A5F;
+    border-color: #6A3190;
 }
 
 #logo {
@@ -31,4 +60,8 @@ input:focus {
     height: 300px;
     margin-top: -90px;
     margin-bottom: -90px;
+}
+
+#register-account {
+    font-size: 0.7em;
 }
