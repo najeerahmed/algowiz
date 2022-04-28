@@ -65,3 +65,8 @@ button:hover {
 #register-account {
     font-size: 0.7em;
 }
+
+#invalid-login {
+    color: red;
+    text-transform: uppercase;
+}

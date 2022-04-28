@@ -9,10 +9,18 @@
 </head>
 <body>
     <img id="logo" src="assets/algo-wiz-logo.png"/>
-    <form method="POST" action="sign_in.php">
+    <form method="POST" action="backend_work/login_authentication.php">
         <input type="username" name="username" placeholder="Enter Username" required/>
         <input type="password" name="password" placeholder="Enter Password"required/>
-        <button>LOGIN</button>
+        <button name="login" type="submit">LOGIN</button>
     </form>
     <a id="register-account">register an account</a>
+
+    <?php 
+        if (!empty($_GET)){
+            if ($_GET["username"] === "invalid"){
+                echo "<p id='invalid-login'>Invalid username / password</p>";
+            }
+        }
+    ?>
 </body>
