@@ -2,7 +2,12 @@ html {
     width: 100%;
     height: 100%;
     font-family: Verdana;
+}
 
+html >  * {
+    animation-name: appear;
+    animation-timing-function: ease;
+    animation-duration: 2s;
 }
 
 body, form {
@@ -60,6 +65,11 @@ button:hover {
     height: 300px;
     margin-top: -90px;
     margin-bottom: -90px;
+    animation-name: slide-in;
+    animation-duration: 0.7s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    
 }
 
 #register-account {
@@ -69,4 +79,29 @@ button:hover {
 #invalid-login {
     color: red;
     text-transform: uppercase;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0%;
+        margin-left: -1000px;
+    }
+
+    75% {
+        margin-left: 200px;
+    }
+
+    to {
+        margin-left: 0px;
+    }
 }

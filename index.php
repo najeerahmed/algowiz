@@ -17,6 +17,8 @@
     <a id="register-account">register an account</a>
 
     <?php 
+        // if the username / password is invalid after comparing to the database
+        // let the user knows that the information is incorrect
         if (!empty($_GET)){
             if ($_GET["username"] === "invalid"){
                 echo "<p id='invalid-login'>Invalid username / password</p>";
