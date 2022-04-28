@@ -14,7 +14,7 @@
         <input type="password" name="password" placeholder="Enter Password"required/>
         <button name="login" type="submit">LOGIN</button>
     </form>
-    <a id="register-account">register an account</a>
+    <a href="./frontend_work/register_account.php">register an account</a>
 
     <?php 
         // if the username / password is invalid after comparing to the database

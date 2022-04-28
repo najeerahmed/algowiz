@@ -34,6 +34,7 @@ input {
     border-color: #440A5F;
     border-radius: 5px;
     font-family: inherit;
+    font-weight: bold;
 }
 
 input:focus {
@@ -45,6 +46,7 @@ button {
     font-family: inherit;
     border-radius: 10px;
     background-color: white;
+    font-weight: bold;
     color: #BFC6CD;
     background-color: #6A3190;
     border-color: #440A5F;
@@ -70,10 +72,6 @@ button:hover {
     animation-timing-function: ease;
     animation-delay: 0s;
     
-}
-
-#register-account {
-    font-size: 0.7em;
 }
 
 #invalid-login {
@@ -104,4 +102,14 @@ button:hover {
     to {
         margin-left: 0px;
     }
+}
+
+a[href="./frontend_work/register_account.php"] { 
+    color: #BFC6CD;
+    font-size: 0.7em;
+    transition-duration: 0.4s;
+}
+
+a[href="./frontend_work/register_account.php"]:hover {
+    color: #6A3190;
 }
