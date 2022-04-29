@@ -6,6 +6,7 @@
 <head>
     <title>Algo Wiz</title>
     <link rel="stylesheet" href="css/styles.css"></link>
+    <link rel="stylesheet" href="css/index_styles.css"></link>
 </head>
 <body>
     <img id="logo" src="assets/algo-wiz-logo.png"/>

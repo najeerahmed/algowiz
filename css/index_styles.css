@@ -1,0 +1,95 @@
+body, form {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+form {
+    gap: 5px;
+}
+
+input {
+    border-color: #440A5F;
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+input:focus {
+    outline-color: #FBC200;
+    outline-width: 1px;
+}
+
+button {
+    font-family: inherit;
+    border-radius: 10px;
+    background-color: white;
+    font-weight: bold;
+    color: #BFC6CD;
+    background-color: #6A3190;
+    border-color: #440A5F;
+    margin-top: 5px;
+    padding: 5px;
+    transition-duration: 0.5s;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #FBC200;
+    background-color: #440A5F;
+    border-color: #6A3190;
+}
+
+#logo {
+    margin-top: -90px;
+    margin-bottom: -90px;
+    animation-name: slide-in;
+    animation-duration: 0.7s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    
+}
+
+#invalid-login {
+    color: red;
+    text-transform: uppercase;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0%;
+        margin-left: -1000px;
+    }
+
+    75% {
+        margin-left: 200px;
+    }
+
+    to {
+        margin-left: 0px;
+    }
+}
+
+a[href="./frontend_work/register_account.php"] { 
+    color: #BFC6CD;
+    font-size: 0.7em;
+    transition-duration: 0.4s;
+}
+
+a[href="./frontend_work/register_account.php"]:hover {
+    color: #6A3190;
+}
