@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+main {
+    display: grid;
+    grid-template-areas:
+        "form aside";
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+}
+
+form {
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+aside {
+    grid-area: aside;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
