@@ -12,7 +12,7 @@
     <body>
         <img id="logo" src="../assets/algo-wiz-logo.png"/>
 
-        <main id="register-account-area">
+        <main id="register-account-area" method=$_POST>
             <form>
                 <input type="username" name="username" placeholder="Register Username" required/>
                 <input type="password" name="password" placeholder="Register Password" required/>
@@ -33,6 +33,8 @@
                 </ul>
             </aside>
         </main>
+
+        <script href="./js/script.js"></script>
 
     </body>
 
