@@ -16,25 +16,25 @@
             <form>
                 <input type="username" name="username" placeholder="Register Username" required/>
                 <input id="password" type="password" name="password" placeholder="Register Password" required/>
-                <button type="submit">Register Account</button>
+                <button id="bt-submit" type="submit">Register Account</button>
             </form>
 
             <aside id="requirement-satisfaction">
                 <ul>
-                    <li>
+                    <li id="req-special-char">
                         Have a special character (!, @, #, etc.)
                     </li>
-                    <li>
+                    <li id="req-number">
                         Include a number 
                     </li>
-                    <li>
+                    <li id="req-length">
                         Length must be longer then 7 characters
                     </li>
                 </ul>
             </aside>
         </main>
 
-        <script href="./js/password_validator.js"></script>
+        <script type="text/javascript" src="./js/password_validator.js"></script>
 
     </body>
 
