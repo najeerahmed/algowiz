@@ -7,7 +7,7 @@
     // query to extract password of the submitted username
     $sql_password = "
         select pw
-        from Users
+        from UsersLogin
         where username = '$sub_username';
     ";
 

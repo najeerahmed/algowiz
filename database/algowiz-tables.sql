@@ -7,24 +7,33 @@ drop table if exists UserStatus CASCADE;
 drop table if exists StatusDict CASCADE;
 drop table if exists Topic CASCADE;
 drop table if exists Users CASCADE;
+drop table if exists UsersLogin CASCADE;
+drop table if exists UsersInfo CASCADE;
 
 
 -- Create the Tables
 
 -- Create Users
-Create table Users(
+Create table UsersLogin(
     user_id integer primary key auto_increment,
     username varchar(20) unique not null,
-    pw varchar(24) not null,
-    uname varchar(50) not null,
+    pw varchar(24) not null
+);
+
+Create table UsersInfo(
+    user_id integer primary key,
+    uname varchar(100) not null,
     email varchar(50) not null,
     city varchar (30) not null,
     state varchar(30) not null,
     country varchar(30) not null,
     dob date not null,
     short_desc varchar(500), -- null allowed
-    points integer not null
+    points integer not null,
+    foreign key (user_id) references UsersLogin(user_id)
 );
+
+
 
 -- Create StatusDict
 Create table StatusDict(
@@ -38,7 +47,7 @@ Create table UserStatus(
     user_id integer not null,
     status_id integer not null,
     primary key(user_id, status_id),
-    foreign key (user_id) references Users(user_id),
+    foreign key (user_id) references UsersLogin(user_id),
     foreign key (status_id) references StatusDict(status_id)
 );
 
@@ -59,7 +68,7 @@ Create table Questions(
     resolved boolean not null,
     
     foreign key (topic_id) references Topic(topic_id),
-    foreign key (user_id) references Users(user_id)
+    foreign key (user_id) references UsersLogin(user_id)
 );
 
 
@@ -74,7 +83,7 @@ create table Answers(
     a_text varchar(2000) not null,
     a_time datetime not null,
     
-    foreign key (user_id) references Users(user_id),
+    foreign key (user_id) references UsersLogin(user_id),
     foreign key (question_id) references Questions(question_id)
 );
 
@@ -86,7 +95,7 @@ create table UserThumbs(
     thumbs boolean,
     
     primary key(user_id, answer_id),
-    foreign key (user_id) references Users(user_id),
+    foreign key (user_id) references UsersLogin(user_id),
     foreign key (answer_id) references Answers(answer_id)
 );
 
