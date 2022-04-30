@@ -15,7 +15,7 @@
         <main id="register-account-area" method=$_POST>
             <form>
                 <input type="username" name="username" placeholder="Register Username" required/>
-                <input type="password" name="password" placeholder="Register Password" required/>
+                <input id="password" type="password" name="password" placeholder="Register Password" required/>
                 <button type="submit">Register Account</button>
             </form>
 
@@ -34,7 +34,7 @@
             </aside>
         </main>
 
-        <script href="./js/script.js"></script>
+        <script href="./js/password_validator.js"></script>
 
     </body>
 
