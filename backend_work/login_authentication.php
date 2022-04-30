@@ -28,10 +28,10 @@
 
     // if the password or username is incorrect then return to the login page
     if (!$valid){
-        header("Location: ../index.php?username=invalid");
+        header("Location: ../index.php?password=invalid");
     }
     else {
-        header("Location: ../index.php?username=valid");
+        header("Location: ../index.php?password=valid&username=$sub_username");
     }
 
 ?>
