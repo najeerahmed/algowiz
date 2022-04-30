@@ -31,8 +31,14 @@
     <body>
         <main>
             <?php
-                echo "<h2>$name</h2>";
-
+                echo "<h1>$name</h1>";
+                $sql = "
+                    select status_title
+                    from UsersLogin natural join UsersInfo
+                    join UserStatus on UsersLogin.user_id = UserStatus.user_id
+                    join StatusDict on UserStatus.status_id = StatusDict.status_id
+                    where UsersLogin.username = '$username';
+                ";
             ?>
         </main>
     </body>
