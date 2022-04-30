@@ -17,29 +17,29 @@ let satisfy_num = false;
 let satisfy_length = false;
 password.addEventListener("keyup", () => {
     if (special_check(password.value)){
-        req_special_char.style.color = "green";
+        req_special_char.style.color = "#56941E";
         satisfy_special = true;
     }
     else {
-        req_special_char.style.color = "red";
+        req_special_char.style.color = "#C20232";
         satisfy_special = false;
     }
 
     if (num_check(password.value)){
-        req_number.style.color = "green";
+        req_number.style.color = "#56941E";
         satisfy_num = true;
     }
     else {
-        req_number.style.color = "red";
+        req_number.style.color = "#C20232";
         satisfy_num = false;
     }
 
     if (password.value.length >= 7){
-        req_length.style.color = "green";
+        req_length.style.color = "#56941E";
         satisfy_length = true;
     }
     else {
-        req_length.style.color = "red";
+        req_length.style.color = "#C20232";
         satisfy_length = false;
     }
 });

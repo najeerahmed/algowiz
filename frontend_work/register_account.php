@@ -14,9 +14,12 @@
 
         <main id="register-account-area" method=$_POST>
             <form>
+                <fieldset>
+                <legend>Register Account</legend>
                 <input type="username" name="username" placeholder="Register Username" required/>
                 <input id="password" type="password" name="password" placeholder="Register Password" required/>
                 <button id="bt-submit" type="submit">Register Account</button>
+                </fieldset>
             </form>
 
             <aside id="requirement-satisfaction">

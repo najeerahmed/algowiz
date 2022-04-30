@@ -1,8 +1,19 @@
 body {
+    animation-name: appear;
+    animation-duration: 1.2s;
+}
+
+body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+}
+
+#logo {
+    animation-name: logo-spin;
+    animation-timing-function: ease;
+    animation-duration: 0.8s;
 }
 
 main {
@@ -11,17 +22,68 @@ main {
         "form aside";
     grid-template-columns: 1fr 1fr;
     gap: 75px;
+    height: 100%;
 }
 
-form {
+legend {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+fieldset {
     grid-area: form;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+input {
+    width: 100%;
+    font-family: inherit;
+}
+
+input {
+    border-color: #440A5F;
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+input:focus {
+    outline-color: #FBC200;
+    outline-width: 1px;
+}
+
+button {
+    font-family: inherit;
+    border-radius: 10px;
+    background-color: white;
+    font-weight: bold;
+    color: #BFC6CD;
+    background-color: #6A3190;
+    border-color: #440A5F;
+    margin-top: 5px;
+    padding: 5px;
+    transition-duration: 0.5s;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #FBC200;
+    background-color: #440A5F;
+    border-color: #6A3190;
+}
+
+button {
+    font-family: inherit;
 }
 
 aside {
     grid-area: aside;
+    height: 100%;
 }
 
 ul {
@@ -29,7 +91,33 @@ ul {
     padding: 0px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 25px;
     list-style-type: none;
-    color: red;
+    color: #C20232;
+    height: 100%;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes logo-spin {
+    from {
+        opacity: 0%;
+        margin-top: 50%;
+        transform: rotate(270deg);
+    }
+
+    to {
+        opacity: 100%;
+        margin: 0px;
+        transform: rotate(0deg);
+    }
 }
