@@ -50,25 +50,6 @@
                         $stmt->close();
                     }
 
-                    if ($stmt = $conn->prepare("SELECT a_text, username from Questions join Answers on (Questions.question_id = Answers.question_id) join Users on (Answers.user_id = Users.user_id) where Questions.question_id=?")) {
-                        $stmt->bind_param("i", $question_id);
-                        $stmt->execute();
-                        $stmt->bind_result($a_text, $username);
-                        echo "<table border = '1'>
-                        <tr>
-                        </tr>";
-                    
-                        while($stmt->fetch())
-                        {
-                            echo"<tr>";
-                            echo "<td>$username</td>";
-                            echo "<td>$a_text</td>";
-                            echo"</tr>";
-                        }
-                        echo "</table>";
-                        $stmt->close();
-                    }
-
                 ?>
                 </fieldset>
             </form>
