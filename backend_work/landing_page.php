@@ -5,7 +5,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>Welcome!</title>
+        <title>Landing</title>
         <link rel="stylesheet" href="../css/styles.css"/>
         <link rel="stylesheet" href="../css/register_acc_styles.css"/>
     </head>
@@ -13,6 +13,11 @@
         <img id="logo" src="../assets/algo-wiz-logo.png"/>
     
         <main id="question-area" method=$_POST>
+            <form action="search_results.php" method = $_POST>
+                <input type="text" name="search_query" value="" placeholder="Search..."><br>
+                <input type="submit" value="Submit">
+            </form>
+            
             <form>
                 <fieldset>
                 <legend>Recently Posted Questions</legend>
