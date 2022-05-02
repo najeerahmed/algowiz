@@ -43,7 +43,7 @@
                         while($stmt->fetch())
                         {
                             echo"<tr>";
-                            echo "<td><a href='return_question_page.php?question_id_num=$question_id'>$title</a></td>";
+                            echo "<td><a href='../frontend_work/return_question_page.php?question_id_num=$question_id'>$title</a></td>";
                             echo"</tr>";
                         }
                         echo "</table>";
