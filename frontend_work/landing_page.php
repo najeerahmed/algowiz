@@ -42,7 +42,7 @@
                     limit 10;";
                 
                     #$result = $conn->query($sql_recent_questions)
-                    if ($stmt = $conn->prepare("SELECT title, question_id from Questions order by q_time desc limit 10")) {
+                    if ($stmt = $conn->prepare("SELECT title, question_id, username from Questions join UsersLogin on (Questions.user_id = UsersLogin.user_id) order by q_time desc limit 10")) {
                         $stmt->execute();
                         $stmt->bind_result($title,$question_id);
                         echo "<table border = '1'>
@@ -53,6 +53,7 @@
                         {
                             echo"<tr>";
                             echo "<td><a href='return_question_page.php?question_id_num=$question_id'>$title</a></td>";
+                            echo "<td><a href='user_profile.php?username=$username'>$username</a></td>";
                             echo"</tr>";
                         }
                         echo "</table>";
