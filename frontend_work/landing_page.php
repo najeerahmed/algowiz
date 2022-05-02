@@ -7,11 +7,24 @@
     <head>
         <title>Landing</title>
         <link rel="stylesheet" href="../css/styles.css"/>
+        <link rel="stylesheet" href="../css/landing_styles.css"/>
+    
     </head>
     <body>
+        <header>
         <img id="logo" src="../assets/algo-wiz-logo.png"/>
-    
-        <main id="question-area" method=$_POST>
+            <nav>
+                <?php
+                    $username = $_GET["username"];
+                    $lp_var = "landing_page.php?username=$username";
+                    $pp_var = "user_profile.php?username=$username";
+                    echo "<p><a href=$lp_var>Home</a></p>";
+                    echo "<p><a href=$pp_var>Profile</a></p>";
+                    echo "<p><a href='../index.php'>Logout</a></p>";
+                ?>
+            </nav>
+        </header>
+        <main id="question-area">
             <form action="search_results.php" method = $_POST>
                 <input type="text" name="search_query" value="" placeholder="Search..."><br>
                 <input type="submit" value="Submit">
