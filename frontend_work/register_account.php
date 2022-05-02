@@ -8,6 +8,7 @@
         <title>Register Account</title>
         <link rel="stylesheet" href="../css/styles.css"/>
         <link rel="stylesheet" href="../css/register_acc_styles.css"/>
+        <link rel="shortcut icon" href="../assets/algo-wiz-logo.png"/>
     </head>
     <body>
         <img id="logo" src="../assets/algo-wiz-logo.png"/>

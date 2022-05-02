@@ -1,25 +1,47 @@
 -- Insert into Users here:
-INSERT INTO Users(username,pw,uname,email,city,state,country,dob,short_desc,points) VALUES ('chiefkheif','password1','Najeer Ahmed', 'nka232@nyu.edu', 'Brooklyn', 'New York', 'United States', '1994-03-08','this is a short description.', 0);
-INSERT INTO Users(username,pw,uname,email,city,state,country,dob,short_desc,points) VALUES ('chiefkeef','lovesosa','Chief Keef', 'dachief231@gmail.com', 'Chicago', 'Illinois', 'United States', '1995-08-015','Better known by my stage name.', 0);
-INSERT INTO Users(username,pw,uname,email,city,state,country,dob,short_desc,points) VALUES ('lizstokedstokes','thebeths432','Liz Stokes', 'thebeths@yahoo.com', 'Auckland', 'NA', 'New Zealand', '1991-05-12','professional birdwatcher', 0);
-INSERT INTO Users(username,pw,uname,email,city,state,country,dob,short_desc,points) VALUES ('yeezus','fishsticks12','Kanye West', 'ye@ye.com', 'Chicago', 'Illinois', 'United States', '1977-06-08','musical genius', 0);
-INSERT INTO Users(username,pw,uname,email,city,state,country,dob,short_desc,points) VALUES ('perfectblue','opus41','Satoshi Kon', 'kon@gmail.com', 'Tokyo', 'NA', 'Japan', '1963-10-12','the color of illusion is perfect blue', 0);
-INSERT INTO Users(username,pw,uname,email,city,state,country,dob,short_desc,points) VALUES ('zugu','demy4eva','Agnes Varda', 'varda@gmail.com', 'Paris', 'NA', 'France', '1928-05-30','film director, screenwriter, photographer, artist', 0);
-INSERT INTO Users(username,pw,uname,email,city,state,country,dob,short_desc,points) VALUES ('damayor','nyc5eva','Mike Bloomberg', 'mike@bloomberg.com', 'New York', 'New York', 'United States', '1942-02-14','businessman, politician, philanthropist', 0);
-INSERT INTO Users(username,pw,uname,email,city,state,country,dob,short_desc,points) VALUES ('$tesla','doge!@#$','Elon Musk', 'elon@musk.com', 'Boca Chica', 'Texas', 'United States', '1971-06-21','reality is fiction, buy tesla', 0);
-INSERT INTO Users(username,pw,uname,email,city,state,country,dob,short_desc,points) VALUES ('calicocatcat','catsarecute','Young Sun Park', 'ysp@gmail.com', 'Seoul', 'NA', 'South Korea', '1995-01-08','what am i doing here', 0);
-INSERT INTO Users(username,pw,uname,email,city,state,country,dob,short_desc,points) VALUES ('bezos2dastars','prime1','Jeffrey Bezos', 'jeff@amazon.com', 'New York', 'New York', 'United States', '1964-01-12','the wiz kid', 0);
+INSERT INTO UsersLogin(username,pw) VALUES ('chiefkheif','password1');
+INSERT INTO UsersLogin(username,pw) VALUES ('chiefkeef','lovesosa');
+INSERT INTO UsersLogin(username,pw) VALUES ('lizstokedstokes','thebeths432');
+INSERT INTO UsersLogin(username,pw) VALUES ('yeezus','fishsticks12');
+INSERT INTO UsersLogin(username,pw) VALUES ('perfectblue','opus41');
+INSERT INTO UsersLogin(username,pw) VALUES ('zugu','demy4eva');
+INSERT INTO UsersLogin(username,pw) VALUES ('damayor','nyc5eva');
+INSERT INTO UsersLogin(username,pw) VALUES ('$tesla','doge!@#$');
+INSERT INTO UsersLogin(username,pw) VALUES ('calicocatcat','catsarecute');
+INSERT INTO UsersLogin(username,pw) VALUES ('bezos2dastars','prime1');
 
-insert into Users(username, pw, uname, email, city, state, country, dob, short_desc, points) values ('kendalcalm', 'heavenlychild', 'Kendal Combs', 'kcbs@gmail.com', 'New York', 'NY', 'United States', '1995-05-14', 'Computer Science graduate from an Ivy League. Front end developer. JS, React, you name it ;)', 0);
-insert into Users(username, pw, uname, email, city, state, country, dob, short_desc, points) values ('ashaetsy', 'blingbling123*', 'Asha Roberson', 'ar231@nyu.edu', 'New York', 'NY', 'United States', '2003-08-24', 'Liberal Arts major. Self taught developer. Currently learning algorithm and need help.', 0);
-insert into Users(username, pw, uname, email, city, state, country, dob, short_desc, points) values ('mrmeyermaxi', 'maximizedprofit$', 'Maxime Meyer', 'maximizer42@aol.com', 'Los Angeles', 'California', 'United States', '1992-09-10', 'Worked in banking before and looking to make a transition into the tech field.', 0);
-insert into Users(username, pw, uname, email, city, state, country, dob, short_desc, points) values ('goldsmith0', 'goldminerlol3@', 'Aliya Goldsmith', 'golden98@gmail.com', 'Orlando', 'Florida', 'United States', '1998-07-18', 'Computer Science graduate student. Currently looking for a job', 18);
-insert into Users(username, pw, uname, email, city, state, country, dob, short_desc, points) values ('geonat', 'pushinp$$$', 'Nate Wilkes', 'nwiles@yahoo.com', 'Houstin', 'Texas', 'United States', '1985-04-01', 'early adopter of internet. produced startups that failed but am solid with algo. Ask me anything.', 0);
-insert into Users(username, pw, uname, email, city, state, country, dob, short_desc, points) values ('yeehaw1', 'rodeoridin!', 'Neha Barlow', 'yeetbarlow@gmail.com', 'Philadelphia', 'Pennsylvania', 'United States','2001-02-05', 'Currently taking an algo class at my unveristy. Looking to develop.', 0);
-insert into Users(username, pw, uname, email, city, state, country, dob, short_desc, points) values ('antmanjj', 'ant123^', 'Anton Jackson', 'antjackson@gmail.com', 'Massachusetts', 'Boston', 'United States', '1970-11-21', 'Programming enthusiasts', 0);
-insert into Users(username, pw, uname, email, city, state, country, dob, short_desc, points) values ('princes9', 'charming*1*', 'Kaila Prentice', 'princess1@gmail.com', 'Beverly Hills', 'California', 'United States', '2004-06-02', 'Passionate about programming. Love algorithms.', 0);
-insert into Users(username, pw, uname, email, city, state, country, dob, short_desc, points) values ('willasr2', 'willreadbooks0', 'Willa Reed', 'wilard00@gmail.com', 'Denver', 'Colorado', 'United States', '2002-03-22', 'Read a few books on algorithm. Aspire to become a fullstack developer.', 0);
-insert into Users(username, pw, uname, email, city, state, country, dob, short_desc, points) values ('bernman', 'bcardi!', 'Bernard Jackson', 'bernmanson@yahoo.com', 'Jersey City', 'New Jersey', 'United States', '1980-12-15', 'Consider myself an algo expert. Open to questions about algo and anything tech related.', 0);
+insert into UsersLogin(username, pw) values ('kendalcalm', 'heavenlychild');
+insert into UsersLogin(username, pw) values ('ashaetsy', 'blingbling123*');
+insert into UsersLogin(username, pw) values ('mrmeyermaxi', 'maximizedprofit$');
+insert into UsersLogin(username, pw) values ('goldsmith0', 'goldminerlol3@');
+insert into UsersLogin(username, pw) values ('geonat', 'pushinp$$$');
+insert into UsersLogin(username, pw) values ('yeehaw1', 'rodeoridin!');
+insert into UsersLogin(username, pw) values ('antmanjj', 'ant123^');
+insert into UsersLogin(username, pw) values ('princes9', 'charming*1*');
+insert into UsersLogin(username, pw) values ('willasr2', 'willreadbooks0');
+insert into UsersLogin(username, pw) values ('bernman', 'bcardi!');
+
+INSERT INTO UsersInfo(user_id,uname,email,city,state,country,dob,short_desc,points) VALUES (1,'Najeer Ahmed', 'nka232@nyu.edu', 'Brooklyn', 'New York', 'United States', '1994-03-08','this is a short description.', 0);
+INSERT INTO UsersInfo(user_id,uname,email,city,state,country,dob,short_desc,points) VALUES (2,'Chief Keef', 'dachief231@gmail.com', 'Chicago', 'Illinois', 'United States', '1995-08-015','Better known by my stage name.', 0);
+INSERT INTO UsersInfo(user_id,uname,email,city,state,country,dob,short_desc,points) VALUES (3,'Liz Stokes', 'thebeths@yahoo.com', 'Auckland', 'NA', 'New Zealand', '1991-05-12','professional birdwatcher', 0);
+INSERT INTO UsersInfo(user_id,uname,email,city,state,country,dob,short_desc,points) VALUES (4,'Kanye West', 'ye@ye.com', 'Chicago', 'Illinois', 'United States', '1977-06-08','musical genius', 0);
+INSERT INTO UsersInfo(user_id,uname,email,city,state,country,dob,short_desc,points) VALUES (5,'Satoshi Kon', 'kon@gmail.com', 'Tokyo', 'NA', 'Japan', '1963-10-12','the color of illusion is perfect blue', 0);
+INSERT INTO UsersInfo(user_id,uname,email,city,state,country,dob,short_desc,points) VALUES (6,'Agnes Varda', 'varda@gmail.com', 'Paris', 'NA', 'France', '1928-05-30','film director, screenwriter, photographer, artist', 0);
+INSERT INTO UsersInfo(user_id,uname,email,city,state,country,dob,short_desc,points) VALUES (7,'Mike Bloomberg', 'mike@bloomberg.com', 'New York', 'New York', 'United States', '1942-02-14','businessman, politician, philanthropist', 0);
+INSERT INTO UsersInfo(user_id,uname,email,city,state,country,dob,short_desc,points) VALUES (8,'Elon Musk', 'elon@musk.com', 'Boca Chica', 'Texas', 'United States', '1971-06-21','reality is fiction, buy tesla', 0);
+INSERT INTO UsersInfo(user_id,uname,email,city,state,country,dob,short_desc,points) VALUES (9,'Young Sun Park', 'ysp@gmail.com', 'Seoul', 'NA', 'South Korea', '1995-01-08','what am i doing here', 0);
+INSERT INTO UsersInfo(user_id,uname,email,city,state,country,dob,short_desc,points) VALUES (10,'Jeffrey Bezos', 'jeff@amazon.com', 'New York', 'New York', 'United States', '1964-01-12','the wiz kid', 0);
+
+insert into UsersInfo(user_id, uname, email, city, state, country, dob, short_desc, points) values (11,'Kendal Combs', 'kcbs@gmail.com', 'New York', 'NY', 'United States', '1995-05-14', 'Computer Science graduate from an Ivy League. Front end developer. JS, React, you name it ;)', 0);
+insert into UsersInfo(user_id, uname, email, city, state, country, dob, short_desc, points) values (12, 'Asha Roberson', 'ar231@nyu.edu', 'New York', 'NY', 'United States', '2003-08-24', 'Liberal Arts major. Self taught developer. Currently learning algorithm and need help.', 0);
+insert into UsersInfo(user_id, uname, email, city, state, country, dob, short_desc, points) values (13, 'Maxime Meyer', 'maximizer42@aol.com', 'Los Angeles', 'California', 'United States', '1992-09-10', 'Worked in banking before and looking to make a transition into the tech field.', 0);
+insert into UsersInfo(user_id, uname, email, city, state, country, dob, short_desc, points) values (14, 'Aliya Goldsmith', 'golden98@gmail.com', 'Orlando', 'Florida', 'United States', '1998-07-18', 'Computer Science graduate student. Currently looking for a job', 18);
+insert into UsersInfo(user_id, uname, email, city, state, country, dob, short_desc, points) values (15, 'Nate Wilkes', 'nwiles@yahoo.com', 'Houstin', 'Texas', 'United States', '1985-04-01', 'early adopter of internet. produced startups that failed but am solid with algo. Ask me anything.', 0);
+insert into UsersInfo(user_id, uname, email, city, state, country, dob, short_desc, points) values (16, 'Neha Barlow', 'yeetbarlow@gmail.com', 'Philadelphia', 'Pennsylvania', 'United States','2001-02-05', 'Currently taking an algo class at my unveristy. Looking to develop.', 0);
+insert into UsersInfo(user_id, uname, email, city, state, country, dob, short_desc, points) values (17, 'Anton Jackson', 'antjackson@gmail.com', 'Massachusetts', 'Boston', 'United States', '1970-11-21', 'Programming enthusiasts', 0);
+insert into UsersInfo(user_id, uname, email, city, state, country, dob, short_desc, points) values (18, 'Kaila Prentice', 'princess1@gmail.com', 'Beverly Hills', 'California', 'United States', '2004-06-02', 'Passionate about programming. Love algorithms.', 0);
+insert into UsersInfo(user_id, uname, email, city, state, country, dob, short_desc, points) values (19, 'Willa Reed', 'wilard00@gmail.com', 'Denver', 'Colorado', 'United States', '2002-03-22', 'Read a few books on algorithm. Aspire to become a fullstack developer.', 0);
+insert into UsersInfo(user_id, uname, email, city, state, country, dob, short_desc, points) values (20, 'Bernard Jackson', 'bernmanson@yahoo.com', 'Jersey City', 'New Jersey', 'United States', '1980-12-15', 'Consider myself an algo expert. Open to questions about algo and anything tech related.', 0);
 
 -- Insert into Topic
 INSERT INTO Topic(topic_name) VALUES ('The beginnings');

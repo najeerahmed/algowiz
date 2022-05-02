@@ -7,6 +7,7 @@
     <title>Algo Wiz</title>
     <link rel="stylesheet" href="css/styles.css"></link>
     <link rel="stylesheet" href="css/index_styles.css"></link>
+    <link rel="shortcut icon" href="assets/algo-wiz-logo.png"/>
 </head>
 <body>
     <img id="logo" src="assets/algo-wiz-logo.png"/>
@@ -21,9 +22,15 @@
         // if the username / password is invalid after comparing to the database
         // let the user knows that the information is incorrect
         if (!empty($_GET)){
-            if ($_GET["username"] === "invalid"){
+            if ($_GET["password"] === "invalid"){
                 echo "<p id='invalid-login'>Invalid username / password</p>";
             }
+            else if($_GET["password"] === "valid"){
+                echo "<p>$valid_username</p>";
+                $valid_username = $_GET["username"];
+                header("Location: ./frontend_work/user_profile.php?username=$valid_username");
+            }
         }
+            
     ?>
 </body>
