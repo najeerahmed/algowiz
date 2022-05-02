@@ -26,7 +26,7 @@
             </nav>
         </header>
         <main id="question-area">
-            <form action="search_results.php" method = $_POST>
+            <form action="../backend_work/search_results.php" method = $_POST>
                 <input type="text" name="search_query" value="" placeholder="Search..."><br>
                 <input type="submit" value="Submit">
             </form>
