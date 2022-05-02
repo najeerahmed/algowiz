@@ -46,7 +46,7 @@
                 else if ($_GET["username"] === "success") {
                     echo "<p>Success!</p>";
                     // locate to the main page
-                    // header(Location: main_page.php);
+                    header("Location: ../backend_work/landing_page.php");
                 }
             }
         ?>

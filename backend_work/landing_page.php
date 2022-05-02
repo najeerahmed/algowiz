@@ -1,5 +1,5 @@
 <?php
-    include_once "../backend_work/connect_server.php";
+    include_once "connect_server.php";
 ?>
 
 <!doctype html>
@@ -26,7 +26,7 @@
                     select title, q_time
                     from Questions
                     order by q_time desc
-                    limit 10";
+                    limit 10;";
                 
                     #$result = $conn->query($sql_recent_questions)
                     if ($stmt = $conn->prepare("SELECT title, question_id from Questions order by q_time desc limit 10")) {
@@ -60,8 +60,8 @@
                     limit 10";
                 
                     #$result = $conn->query($sql_recent_questions)
-                    if ($stmt = $conn->prepare("SELECT title, Users.username, status_title
-                    from Answers join Users on (Answers.user_id = Users.user_id) join Questions on (Answers.question_id = Questions.question_id) join UserStatus on (Users.user_id = UserStatus.user_id) join StatusDict on (UserStatus.status_id = StatusDict.status_id)
+                    if ($stmt = $conn->prepare("SELECT title, UsersLogin.username, status_title
+                    from Answers join UsersLogin on (Answers.user_id = UsersLogin.user_id) join Questions on (Answers.question_id = Questions.question_id) join UserStatus on (UsersLogin.user_id = UserStatus.user_id) join StatusDict on (UserStatus.status_id = StatusDict.status_id)
                     order by a_time desc
                     limit 10")) {
                         $stmt->execute();

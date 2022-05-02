@@ -22,7 +22,7 @@
                     select title, q_time
                     from Questions
                     order by q_time desc
-                    limit 10";
+                    limit 10;";
                 
                     #$result = $conn->query($sql_recent_questions)
                     if ($stmt = $conn->prepare("SELECT title from Questions where Questions.question_id=?")) {
@@ -43,7 +43,7 @@
                         $stmt->close();
                     }
 
-                    if ($stmt = $conn->prepare("SELECT a_text, username,a_time from Questions join Answers on (Questions.question_id = Answers.question_id) join Users on (Answers.user_id = Users.user_id) where Questions.question_id=?")) {
+                    if ($stmt = $conn->prepare("SELECT a_text, username,a_time from Questions join Answers on (Questions.question_id = Answers.question_id) join UsersLogin on (Answers.user_id = UsersLogin.user_id) where Questions.question_id=?")) {
                         $stmt->bind_param("i", $question_id);
                         $stmt->execute();
                         $stmt->bind_result($a_text, $username, $a_time);
