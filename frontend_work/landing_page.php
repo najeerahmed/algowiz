@@ -7,6 +7,7 @@
     <head>
         <title>Landing</title>
         <link rel="stylesheet" href="../css/styles.css"/>
+        <link rel="stylesheet" href="../css/nav_styles.css"/>
         <link rel="stylesheet" href="../css/landing_styles.css"/>
     
     </head>

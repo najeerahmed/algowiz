@@ -33,25 +33,48 @@
         ?>
 
         <link type="text/css" rel="stylesheet" href="../css/styles.css"/>
+        <link type="text/css" rel="stylesheet" href="../css/nav_styles.css"/>
         <link type="text/css" rel="stylesheet" href="../css/user_profile_styles.css"/>
         <link rel="shortcut icon" href="assets/algo-wiz-logo.png"/>
     </head>
     <body>
+    <header>
+        <img id="logo" src="../assets/algo-wiz-logo.png"/>
+            <nav>
+                <?php
+                    $username = $_GET["username"];
+                    $lp_var = "landing_page.php?username=$username";
+                    $pp_var = "user_profile.php?username=$username";
+                    echo "<p><a href=$lp_var>Home</a></p>";
+                    echo "<p><a href=$pp_var>Profile</a></p>";
+                    echo "<p><a href='../index.php'>Logout</a></p>";
+                ?>
+            </nav>
+        </header>
+
         <main>
             <?php
                 echo "
                 <h1>$name</h1>
 
                 <section id='status_section'>
-                    <h3>$rank, </h3>
-                    <h3>$points</h3>
+                    <h3>$rank,</h3>
+                    <h3>$points points</h3>
                 </section>
 
                 <p>
-                    $short_desc
+                    <q>$short_desc</q>
                 </p>
 
-
+                <h4>Personal Information</h4>
+                <section id='personal_information'>
+                    <p class='title' id='birthday-title'>Birth Date: </p>
+                    <p id='birthday-info'>$dob</p>
+                    <p class='title' id='email-title'>Email: </p>
+                    <p id='email-info'>$email</p>
+                    <p class='title' id='address-title'>Address:</p>
+                    <p id='address-info'>$city, $state, $country</p>
+                </section>
                 ";
 
             ?>

@@ -15,4 +15,48 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 5px;
+}
+
+#personal_information {
+    display: grid;
+    grid-template-areas: 
+        "birthday birthday-info"
+        "email email-info"
+        "address address-info";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 20%;
+}
+
+#birthday-title {
+    grid-area: birthday;
+}
+
+#birthday-info {
+    grid-area: birthday-info;
+}
+
+#email-title {
+    grid-area: email;
+}
+
+#email-info {
+    grid-area: email-info;
+}
+
+#address-title {
+    grid-area: address;
+}
+
+#address-info {
+    grid-area: address-info;
 }
