@@ -13,11 +13,11 @@
     <body>
         <img id="logo" src="../assets/algo-wiz-logo.png"/>
 
-        <main id="register-account-area" method=$_POST>
-            <form>
+        <main id="register-account-area">
+            <form method="POST" action="../backend_work/registration_authentication.php">
                 <fieldset>
                 <legend>Register Account</legend>
-                <input type="username" name="username" placeholder="Register Username" required/>
+                <input type="text" name="username" placeholder="Register Username" required/>
                 <input id="password" type="password" name="password" placeholder="Register Password" required/>
                 <button id="bt-submit" type="submit">Register Account</button>
                 </fieldset>
@@ -37,6 +37,19 @@
                 </ul>
             </aside>
         </main>
+
+        <?php
+            if (!empty($_GET)){
+                if ($_GET["username"] === "taken"){
+                    echo "<p>Username is already taken. Enter another one...</p>";
+                }
+                else if ($_GET["username"] === "success") {
+                    echo "<p>Success!</p>";
+                    // locate to the main page
+                    // header(Location: main_page.php);
+                }
+            }
+        ?>
 
         <script type="text/javascript" src="./js/password_validator.js"></script>
 
