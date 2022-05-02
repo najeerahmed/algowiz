@@ -73,12 +73,12 @@
                     limit 10";
                 
                     #$result = $conn->query($sql_recent_questions)
-                    if ($stmt = $conn->prepare("SELECT title, UsersLogin.username, status_title
+                    if ($stmt = $conn->prepare("SELECT title, UsersLogin.username, status_title, Answers.question_id
                     from Answers join UsersLogin on (Answers.user_id = UsersLogin.user_id) join Questions on (Answers.question_id = Questions.question_id) join UserStatus on (UsersLogin.user_id = UserStatus.user_id) join StatusDict on (UserStatus.status_id = StatusDict.status_id)
                     order by a_time desc
                     limit 10")) {
                         $stmt->execute();
-                        $stmt->bind_result($title,$username,$status_title);
+                        $stmt->bind_result($title,$username,$status_title,$question_id);
                         echo "<table border = '1'>
                         <tr>
                         </tr>";
