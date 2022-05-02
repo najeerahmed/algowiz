@@ -28,7 +28,7 @@
             else if($_GET["password"] === "valid"){
                 echo "<p>$valid_username</p>";
                 $valid_username = $_GET["username"];
-                header("Location: ./frontend_work/user_profile.php?username=$valid_username");
+                header("Location: ./frontend_work/landing_page.php?username=$valid_username");
             }
         }
             
