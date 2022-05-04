@@ -1,5 +1,6 @@
 <?php
     include_once "../backend_work/connect_server.php";
+    session_start();
 ?>
 
 <!doctype html>
@@ -8,9 +9,22 @@
         <title>Search Results</title>
         <link rel="stylesheet" href="../css/styles.css"/>
         <link rel="stylesheet" href="../css/register_acc_styles.css"/>
+        <link rel="stylesheet" href="../css/nav_styles.css"/>
     </head>
     <body>
+        <header>
         <img id="logo" src="../assets/algo-wiz-logo.png"/>
+            <nav>
+                <?php
+                    $username = $_SESSION["username"];
+                    $lp_var = "../frontend_work/landing_page.php?username=$username";
+                    $pp_var = "../frontend_work/user_profile.php?username=$username";
+                    echo "<p><a href=$lp_var>Home</a></p>";
+                    echo "<p><a href=$pp_var>Profile</a></p>";
+                    echo "<p><a href='../index.php'>Logout</a></p>";
+                ?>
+            </nav>
+        </header>
     
         <main id="question-area" method=$_POST>
             <title>Search Results</title>

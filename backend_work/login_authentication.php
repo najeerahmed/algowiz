@@ -1,4 +1,6 @@
 <?php
+    // start the session
+    session_start();
     include_once "connect_server.php";
 
     $sub_username = $_POST["username"];
@@ -31,6 +33,8 @@
         header("Location: ../index.php?password=invalid");
     }
     else {
+        // store username as a global session variable
+        $_SESSION["username"]="$sub_username";
         header("Location: ../index.php?password=valid&username=$sub_username");
     }
 
