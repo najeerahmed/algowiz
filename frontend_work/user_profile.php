@@ -38,8 +38,11 @@
         <link rel="shortcut icon" href="assets/algo-wiz-logo.png"/>
     </head>
     <body>
-    <header>
-        <img id="logo" src="../assets/algo-wiz-logo.png"/>
+        <header>
+            <img id="logo" src="../assets/algo-wiz-logo.png"/>
+            <form id="search_bar" action="../backend_work/search_results.php" method = $_POST>
+                <input type="text" name="search_query" value="" placeholder="Search...">
+            </form>
             <nav>
                 <?php
                     $username = $_GET["username"];

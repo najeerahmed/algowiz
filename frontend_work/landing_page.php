@@ -5,7 +5,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>Landing</title>
+        <title>Algo-Wiz</title>
         <link rel="stylesheet" href="../css/styles.css"/>
         <link rel="stylesheet" href="../css/nav_styles.css"/>
         <link rel="stylesheet" href="../css/landing_styles.css"/>
@@ -14,6 +14,10 @@
     <body>
         <header>
             <img id="logo" src="../assets/algo-wiz-logo.png"/>
+            <form action="../backend_work/search_results.php" method = $_POST>
+                <input type="text" name="search_query" value="" placeholder="Search Questions..."><br>
+            </form>
+
             <nav>
                 <?php
                     $username = $_GET["username"];
@@ -26,10 +30,12 @@
             </nav>
         </header>
         <main id="question-area">
-            <form action="../backend_work/search_results.php" method = $_POST>
-                <input type="text" name="search_query" value="" placeholder="Search..."><br>
-                <input type="submit" value="Submit">
-            </form>
+
+            <a href="./ask_question.php">
+                <button>
+                    Ask a question
+                </button>
+            </a>
             
             <form>
                 <fieldset>
@@ -72,8 +78,7 @@
                     from Answers
                     order by a  _time desc
                     limit 10";
-                
-                    #$result = $conn->query($sql_recent_questions)
+            
                     if ($stmt = $conn->prepare("SELECT title, UsersLogin.username, status_title, Answers.question_id
                     from Answers join UsersLogin on (Answers.user_id = UsersLogin.user_id) join Questions on (Answers.question_id = Questions.question_id) join UserStatus on (UsersLogin.user_id = UserStatus.user_id) join StatusDict on (UserStatus.status_id = StatusDict.status_id)
                     order by a_time desc
