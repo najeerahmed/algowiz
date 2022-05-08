@@ -13,7 +13,7 @@
     </head>
     <body>
         <header>
-        <img id="logo" src="../assets/algo-wiz-logo.png"/>
+            <img id="logo" src="../assets/algo-wiz-logo.png"/>
             <nav>
                 <?php
                     $username = $_GET["username"];

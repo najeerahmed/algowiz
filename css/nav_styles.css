@@ -13,14 +13,14 @@ header {
 }
 
 nav {
-    margin-right: 10px;
     gap: 10px;
+    margin-right: 10px;
 }
 
 #logo {
+    margin-left: 10px;
     height: 100px;
     width: 100px;
     margin-top: -25px;
-    margin-left: 10px;
     margin-bottom: -30px;
 }
