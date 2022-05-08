@@ -39,6 +39,10 @@ header {
 
 input {
     width: 100%;
+    border-color: #440A5F;
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: bold;
 }
 
 nav {

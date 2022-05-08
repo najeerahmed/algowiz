@@ -7,12 +7,16 @@
     <head>
         <title>Question Page!</title>
         <link rel="stylesheet" href="../css/styles.css"/>
-        <link rel="stylesheet" href="../css/register_acc_styles.css"/>
         <link rel="stylesheet" href="../css/nav_styles.css"/>
     </head>
     <body>
         <header>
-        <img id="logo" src="../assets/algo-wiz-logo.png"/>
+            <aside id="logo-container">
+            <img id="logo" src="../assets/algo-wiz-logo.png"/>
+            </aside>
+            <form action="../backend_work/search_results.php" method = $_POST>
+                <input type="text" name="search_query" value="" placeholder="Search Questions..."><br>
+            </form>
             <nav>
                 <?php
                     $username = $_GET["username"];
@@ -24,7 +28,6 @@
                 ?>
             </nav>
         </header>
-        <img id="logo" src="../assets/algo-wiz-logo.png"/>
     
         <main id="question-area" method=$_POST>
             <form>

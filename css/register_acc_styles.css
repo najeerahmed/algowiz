@@ -43,9 +43,6 @@ fieldset {
 input {
     width: 100%;
     font-family: inherit;
-}
-
-input {
     border-color: #440A5F;
     border-radius: 5px;
     font-family: inherit;
