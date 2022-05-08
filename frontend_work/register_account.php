@@ -16,10 +16,10 @@
         <main id="register-account-area">
             <form method="POST" action="../backend_work/registration_authentication.php">
                 <fieldset>
-                <legend>Register Account</legend>
-                <input type="text" name="username" placeholder="Register Username" required/>
-                <input id="password" type="password" name="password" placeholder="Register Password" required/>
-                <button id="bt-submit" type="submit">Register Account</button>
+                    <legend>Register Account</legend>
+                    <input type="text" name="username" placeholder="Register Username" required/>
+                    <input id="password" type="password" name="password" placeholder="Register Password" required/>
+                    <button id="bt-submit" type="submit">Register Account</button>
                 </fieldset>
             </form>
 
@@ -40,13 +40,14 @@
 
         <?php
             if (!empty($_GET)){
-                if ($_GET["username"] === "taken"){
-                    echo "<p>Username is already taken. Enter another one...</p>";
+                $sub_username = $_GET["username"];
+                if ($_GET["status"] === "taken"){
+                    echo "<p>$sub_username is already taken. Enter another one...</p>";
                 }
-                else if ($_GET["username"] === "success") {
+                else if ($_GET["status"] === "success") {
                     echo "<p>Success!</p>";
                     // locate to the main page
-                    header("Location: ../backend_work/landing_page.php");
+                    header("Location: ./landing_page.php?username=$sub_username");
                 }
             }
         ?>

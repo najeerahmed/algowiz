@@ -14,13 +14,13 @@
     $result_check = mysqli_num_rows($result);
 
     if ($result_check >= 1) {
-        header("Location: ../frontend_work/register_account.php?username=taken");
+        header("Location: ../frontend_work/register_account.php?status=taken&username=$submitted_username");
     }
     else {
         $sql = "
             insert into UsersLogin(username, pw) values ('$submitted_username', '$submitted_password');
         ";
         mysqli_query($conn, $sql);
-        header("Location: ../frontend_work/register_account.php?username=success");
+        header("Location: ../frontend_work/register_account.php?status=success&username=$submitted_username");
     }
 ?>
