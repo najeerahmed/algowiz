@@ -12,7 +12,7 @@ header {
     grid-template-areas: 
         "logo search-bar nav";
     grid-template-columns: 1fr 4fr 1fr;
-    border-bottom: 1px solid red;
+    border-bottom: 3px solid #440A5F;
     align-items: center;
     gap: 30px;
 }

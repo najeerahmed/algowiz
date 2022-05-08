@@ -1,0 +1,18 @@
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+#question-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#asker-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}

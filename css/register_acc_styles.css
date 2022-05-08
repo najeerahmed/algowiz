@@ -8,6 +8,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    background: linear-gradient(#6A3190, #FBC200);
 }
 
 #logo {

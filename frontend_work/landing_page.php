@@ -34,20 +34,18 @@
         <main id="question-area">
 
             <a href="./ask_question.php">
-                <button>
+                <button id='bt-ask-question'>
                     Ask a question
                 </button>
             </a>
-            
-            <!-- should reimplement with proper link rather than display with form -->
-            <!-- Recently asked questions -->
+
             <?php
                 $sql_recent_questions = "
                 select title, q_time
                 from Questions
                 order by q_time desc
                 limit 10;";
-            
+                echo "<h3 class='title'>Recently Posted Questions</h3>";
                 if ($stmt = $conn->prepare("SELECT title, question_id, username from Questions join UsersLogin on (Questions.user_id = UsersLogin.user_id) order by q_time desc limit 10")) {
                     $stmt->execute();
                     $stmt->bind_result($title,$question_id,$username);
@@ -75,6 +73,8 @@
                 from Answers
                 order by a  _time desc
                 limit 10";
+
+                echo "<h3 class='title'>Recently Posted Answers</h3>";
         
                 if ($stmt = $conn->prepare("SELECT title, UsersLogin.username, status_title, Answers.question_id
                 from Answers join UsersLogin on (Answers.user_id = UsersLogin.user_id) join Questions on (Answers.question_id = Questions.question_id) join UserStatus on (UsersLogin.user_id = UserStatus.user_id) join StatusDict on (UserStatus.status_id = StatusDict.status_id)

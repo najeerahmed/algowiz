@@ -8,6 +8,10 @@ body, form {
     gap: 5px;
 }
 
+body {
+    background: linear-gradient(#6A3190, #FBC200);
+}
+
 form {
     gap: 5px;
 }

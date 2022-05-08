@@ -8,6 +8,7 @@
         <title>Question Page!</title>
         <link rel="stylesheet" href="../css/styles.css"/>
         <link rel="stylesheet" href="../css/nav_styles.css"/>
+        <link rel="stylesheet" href="../css/return_question_styles.css"/>
     </head>
     <body>
         <header>
@@ -29,61 +30,58 @@
             </nav>
         </header>
     
-        <main id="question-area" method=$_POST>
-            <form>
-                <fieldset>
-                <legend>Recently Posted Questions</legend>
+        <main>
+            <section id="question-area">
                 <?php
                     $question_id = $_GET['question_id_num'];
-                    $sql_recent_questions = "
-                    select title, q_time
-                    from Questions
-                    order by q_time desc
-                    limit 10;";
+
+                    // retrieve the username of the person who asked the question
+                    $sql = "
+                        select username
+                        from Questions join UsersLogin on UsersLogin.user_id = Questions.user_id
+                        where Questions.question_id = $question_id;
+                    ";
+
+                    $result = mysqli_query($conn, $sql);
+                    $row = mysqli_fetch_assoc($result);
+                    $username_ask = $row["username"];
                 
-                    #$result = $conn->query($sql_recent_questions)
-                    if ($stmt = $conn->prepare("SELECT title from Questions where Questions.question_id=?")) {
+                    if ($stmt = $conn->prepare("SELECT title, q_text, q_time from Questions where Questions.question_id=?")) {
                         $stmt->bind_param("i", $question_id);
                         $stmt->execute();
-                        $stmt->bind_result($title);
-                        echo "<table border = '1'>
-                        <tr>
-                        </tr>";
+                        $stmt->bind_result($title, $q_text, $q_time);
                     
                         while($stmt->fetch())
                         {
-                            echo"<tr>";
-                            echo "<td>$title</td>";
-                            echo"</tr>";
+                            echo "<h3>$title</h3>";
+                            echo "<p>$q_text</p>";
+                            echo "<section id='asker-info'>";
+                            echo "<p>$username_ask</p>";
+                            echo "<p>$q_time</p>";
+                            echo "</section>";
                         }
-                        echo "</table>";
                         $stmt->close();
                     }
+                ?>
+            </section>
 
+            <section id="answer-area">
+                <?php
                     if ($stmt = $conn->prepare("SELECT a_text, username,a_time from Questions join Answers on (Questions.question_id = Answers.question_id) join UsersLogin on (Answers.user_id = UsersLogin.user_id) where Questions.question_id=?")) {
                         $stmt->bind_param("i", $question_id);
                         $stmt->execute();
                         $stmt->bind_result($a_text, $username, $a_time);
-                        echo "<table border = '1'>
-                        <tr>
-                        </tr>";
-                    
+
                         while($stmt->fetch())
                         {
-                            echo"<tr>";
-                            echo "<td>$username</td>";
-                            echo "<td>$a_text</td>";
-                            echo "<td>$a_time</td>";
-                            echo"</tr>";
+                            echo "<p>$username</p>";
+                            echo "<p>$a_text</p>";
+                            echo "<p>$a_time</p>";
                         }
-                        echo "</table>";
                         $stmt->close();
                     }
-
                 ?>
-                </fieldset>
-            </form>
-
+            </section>
         </main>
     </body>
 
