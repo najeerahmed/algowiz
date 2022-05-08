@@ -15,7 +15,7 @@
         <img id="logo" src="../assets/algo-wiz-logo.png"/>
             <nav>
                 <?php
-                    $username = $_SESSION["username"];
+                    $username = $_GET["username"];
                     $lp_var = "landing_page.php?username=$username";
                     $pp_var = "user_profile.php?username=$username";
                     echo "<p><a href=$lp_var>Home</a></p>";

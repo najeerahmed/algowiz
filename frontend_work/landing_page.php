@@ -13,7 +13,9 @@
     </head>
     <body>
         <header>
-            <img id="logo" src="../assets/algo-wiz-logo.png"/>
+            <aside id='logo-container'>
+                <img id="logo" src="../assets/algo-wiz-logo.png"/>
+            </aside>
             <form action="../backend_work/search_results.php" method = $_POST>
                 <input type="text" name="search_query" value="" placeholder="Search Questions..."><br>
             </form>
@@ -38,6 +40,7 @@
             </a>
             
             <!-- should reimplement with proper link rather than display with form -->
+            <!-- Recently asked questions -->
             <?php
                 $sql_recent_questions = "
                 select title, q_time
@@ -54,8 +57,9 @@
                 
                     while($stmt->fetch())
                     {
+                        $link_question = "return_question_page.php?question_id_num=$question_id&username=$username";
                         echo"<tr>";
-                        echo "<td><a href='return_question_page.php?question_id_num=$question_id'>$title</a></td>";
+                        echo "<td><a href=$link_question>$title</a></td>";
                         echo "<td><a href='user_profile.php?username=$username'>$username</a></td>";
                         echo"</tr>";
                     }
@@ -64,6 +68,7 @@
                 }
             ?>
 
+            <!-- Recently answered questions -->
             <?php
                 $sql_recent_questions = "
                 select a_title, a_time

@@ -17,13 +17,20 @@ header {
     gap: 30px;
 }
 
-#logo {
+#logo-container {
     grid-area: logo;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#logo {
     margin-left: 10px;
     height: 100px;
     width: 100px;
     margin-top: -25px;
     margin-bottom: -30px;
+    margin-right: -30px;
 }
 
 #search-bar {
@@ -36,4 +43,7 @@ input {
 
 nav {
     grid-area: nav;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
