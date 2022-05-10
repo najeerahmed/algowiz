@@ -45,12 +45,18 @@
             </form>
             <nav>
                 <?php
-                    $username = $_GET["username"];
-                    $lp_var = "landing_page.php?username=$username";
-                    $pp_var = "user_profile.php?username=$username";
-                    echo "<p><a href=$lp_var>Home</a></p>";
-                    echo "<p><a href=$pp_var>Profile</a></p>";
-                    echo "<p><a href='../index.php'>Logout</a></p>";
+                    $visit_username = $_GET["visit_username"];
+                    if ($visit_username === 'false'){
+                        $username = $_GET["username"];
+                        $lp_var = "landing_page.php?username=$username";
+                        $pp_var = "user_profile.php?username=$username&visit_username=$false";
+                        echo "<p><a href=$lp_var>Home</a></p>";
+                        echo "<p><a href=$pp_var>Profile</a></p>";
+                        echo "<p><a href='../index.php'>Logout</a></p>";   
+                    }
+                    else {
+                        
+                    }
                 ?>
             </nav>
         </header>
