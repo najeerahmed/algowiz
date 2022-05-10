@@ -7,17 +7,28 @@
     <head>
         <?php
             $username = $_GET["username"];
-
-            $sql = "
+            $visit_username = $_GET["visit_username"];
+            if ($visit_username === 'false'){
+                $sql = "
                     select uname, status_title, points, email, city, state, country, dob, short_desc
                     from UsersLogin natural join UsersInfo
                     join UserStatus on UsersLogin.user_id = UserStatus.user_id
                     join StatusDict on UserStatus.status_id = StatusDict.status_id
                     where UsersLogin.username = '$username';
                 ";
+            }
+            else {
+                $sql = "
+                    select uname, status_title, points, email, city, state, country, dob, short_desc
+                    from UsersLogin natural join UsersInfo
+                    join UserStatus on UsersLogin.user_id = UserStatus.user_id
+                    join StatusDict on UserStatus.status_id = StatusDict.status_id
+                    where UsersLogin.username = '$visit_username';
+                ";   
+            }
 
-                $result = mysqli_query($conn, $sql);
-                $row = mysqli_fetch_assoc($result); // should only be one row
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_assoc($result); // should only be one row
 
             $name = $row["uname"];
             $rank = $row["status_title"];
@@ -44,19 +55,13 @@
                 <input type="text" name="search_query" value="" placeholder="Search...">
             </form>
             <nav>
+                
                 <?php
-                    $visit_username = $_GET["visit_username"];
-                    if ($visit_username === 'false'){
-                        $username = $_GET["username"];
-                        $lp_var = "landing_page.php?username=$username";
-                        $pp_var = "user_profile.php?username=$username&visit_username=$false";
-                        echo "<p><a href=$lp_var>Home</a></p>";
-                        echo "<p><a href=$pp_var>Profile</a></p>";
-                        echo "<p><a href='../index.php'>Logout</a></p>";   
-                    }
-                    else {
-                        
-                    }
+                    $lp_var = "landing_page.php?username=$username";
+                    $pp_var = "user_profile.php?username=$username&visit_username=false";
+                    echo "<p><a href=$lp_var>Home</a></p>";
+                    echo "<p><a href=$pp_var>Profile</a></p>";
+                    echo "<p><a href='../index.php'>Logout</a></p>";   
                 ?>
             </nav>
         </header>
