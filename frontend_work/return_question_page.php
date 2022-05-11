@@ -80,10 +80,12 @@
                                     <p>$a_time</p>
                                 </div>
 
-                                <div class='bt-area'>
-                                    <button id='bt-like' class='reaction-button'><img class='reaction-image' src='../assets/like_button.png'/></button>
-                                    <button id='bt-dislike' class='reaction-button'><img class='reaction-image' src='../assets/dislike_button.png'/></button>
-                                </div>
+                                <form class='bt-area' method='GET' action='../backend_work/update_like_dislike.php'>
+                                    
+                                    <button id='bt-like' class='reaction-button' name='bt' value ='like'><img class='reaction-image' src='../assets/like_button.png'/></button>
+                                    <button id='bt-dislike' class='reaction-button' name='bt' value = 'dislike'><img class='reaction-image' src='../assets/dislike_button.png'/></button>
+                                
+                                </form>
                             </section>
                             ";
                         }
