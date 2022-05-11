@@ -39,7 +39,7 @@
                         Ask a question
                     </button>
                     </a>
-                "
+                ";
 
 
                 $sql_recent_questions = "
