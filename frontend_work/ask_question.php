@@ -8,6 +8,7 @@
         <title>Ask Question</title>
         <link rel="stylesheet" type="text/css" href="../css/styles.css"/>
         <link rel="stylesheet" type="text/css" href="../css/nav_styles.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/ask_question_styles.css"/>
     </head>
 
     <body>
@@ -32,6 +33,7 @@
         </header>
 
         <main>
+            <h3>Question Form</h3>
             <?php
                 // sql to retrieve a list of topics from the database
                 $sql = "
@@ -46,18 +48,18 @@
                 }
             
                 echo "
-                    <form>
-                        <input list='algo-topics'>
-                        <datalist id='algo-topics'>
+                    <form id='question-form'>
+                        <select name='algo-topic-list' #id='algo-topic-list''>
+                            <option value = '' disabled selected hidden >Select Algo Topics</option>
                     ";
 
                 for ($i = 0; $i < count($topic_array); $i++){
-                    echo "<option value=$topic_array[$i]>";
+                    echo "<option value=$topic_array[$i]>$topic_array[$i]</option>";
                 }
 
                 echo "
-      
-                        </datalist>
+                        <textarea id='question-box' placeholder='Enter your question here...'></textarea>
+                        <input type='submit'/>
                     </form>
                 "
             ?>

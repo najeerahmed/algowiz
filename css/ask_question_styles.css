@@ -1,0 +1,21 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+form > * {
+    font-family: inherit;
+}
+
+#question-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#question-box {
+    width: 600px;
+    height: 300px;
+}
