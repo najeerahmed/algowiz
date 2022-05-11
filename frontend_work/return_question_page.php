@@ -95,8 +95,10 @@
             </section>
 
             <!-- for the user to create an answer for the question -->
-            <form id="response-area">
-                <input type="text-area" />
+            <!-- need to add in action method to direct to the backend to register for the answer -->
+            <form id="response-area" method="GET" > 
+                <textarea id="response-box" placeholder="Enter your response"></textarea>
+                <input id="submit-response" type="submit" />
             </form>
         </main>
 

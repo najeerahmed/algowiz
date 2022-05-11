@@ -74,3 +74,27 @@ main > * {
     justify-content: space-around;
     width: 100%;
 }
+
+form > * {
+    font-family: inherit;
+}
+
+#response-area {
+    display: grid;
+    grid-template-areas:
+        "response response blank"
+        "response response submit"
+        "response response submit";
+    grid-template-columns: 5fr 4fr 1fr;
+    gap: 10px;
+}
+
+#response-box {
+    grid-area: response;
+    height: 200px;
+}
+
+#submit-response {
+    grid-area: submit;
+    height: 80px;
+}
