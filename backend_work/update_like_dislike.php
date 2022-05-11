@@ -11,7 +11,6 @@
     $question_id = $info[5];
 
 
-
     // SQl query to retrieve user id
     $sql_uid = "
         select user_id
@@ -99,10 +98,46 @@
     }
     
 
-    // update the answerer points by totalting the number of thumbs up and subtracting the number of thumbs down
+    // update the answerer points by totaling the number of thumbs up and subtracting the number of thumbs down
+    $sql_get_num_dislike = "
+        select count(Answers.answer_id) as points_deduction
+        from Answers join ThumbsDown on Answers.answer_id = ThumbsDown.answer_id
+        where Answers.user_id = $uid
+        group by Answers.user_id;
+    ";
+
+    $result = mysqli_query($conn, $sql_get_num_dislike);
+    $row = mysqli_fetch_assoc($result);
+    $points_deduction = 0;
+    if ($row > 0){
+        $points_deduction = $row["points_deduction"];
+    }
+
+    $sql_get_num_like = "
+        select count(Answers.answer_id) as points_add
+        from Answers join ThumbsUp on Answers.answer_id = ThumbsUp.answer_id
+        where Answers.user_id = $uid
+        group by Answers.user_id;
+    ";
+
+    $result = mysqli_query($conn, $sql_get_num_like);
+    $row = mysqli_fetch_assoc($result);
+    $points_add = 0;
+    if ($row > 0){
+        $points_add = $row["points_add"];
+    }
     
+    
+    $sql_udpate_points = "
+        UPDATE UsersInfo 
+        set points = $points_add - $points_deduction
+        where user_id = $uid
+    ";
+
+    mysqli_query($conn, $sql_udpate_points);
 
     header ("Location: ../frontend_work/return_question_page.php?question_id_num=$question_id&username=$username&visit_username=$visit_username");
 
 ?>
 
+// should be using the answer id to update score instead of uid - should double check again
