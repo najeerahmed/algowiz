@@ -108,6 +108,15 @@ create table ThumbsUp (
     foreign key (answer_id) references Answers(answer_id)
 );
 
+-- Create ThumbsDown relation
+create table ThumbsDown (
+    user_id integer not null,
+    answer_id integer not null,
+
+    foreign key (user_id) references UsersLogin(user_id),
+    foreign key (answer_id) references Answers (answer_id)
+);
+
 create table TopicHierarchy (
     topic_id integer, 
     subtopic_id integer,
