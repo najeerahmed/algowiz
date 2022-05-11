@@ -16,9 +16,9 @@
         <img id="logo" src="../assets/algo-wiz-logo.png"/>
             <nav>
                 <?php
-                    $username = $_SESSION["username"];
+                    $username = $_GET["username"];
                     $lp_var = "../frontend_work/landing_page.php?username=$username";
-                    $pp_var = "../frontend_work/user_profile.php?username=$username";
+                    $pp_var = "../frontend_work/user_profile.php?username=$username&visit_username=false";
                     echo "<p><a href=$lp_var>Home</a></p>";
                     echo "<p><a href=$pp_var>Profile</a></p>";
                     echo "<p><a href='../index.php'>Logout</a></p>";
@@ -56,8 +56,9 @@
                     
                         while($stmt->fetch())
                         {
+                            $link_question = "../frontend_work/return_question_page.php?question_id_num=$question_id&username=$username&visit_username=false";
                             echo"<tr>";
-                            echo "<td><a href='../frontend_work/return_question_page.php?question_id_num=$question_id'>$title</a></td>";
+                            echo "<td><a href=$link_question>$title</a></td>";
                             echo"</tr>";
                         }
                         echo "</table>";

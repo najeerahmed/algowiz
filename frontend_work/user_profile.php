@@ -51,9 +51,6 @@
     <body>
         <header>
             <img id="logo" src="../assets/algo-wiz-logo.png"/>
-            <form id="search_bar" action="../backend_work/search_results.php" method = $_POST>
-                <input type="text" name="search_query" value="" placeholder="Search...">
-            </form>
             <nav>
                 
                 <?php
@@ -64,6 +61,11 @@
                     echo "<p><a href='../index.php'>Logout</a></p>";   
                 ?>
             </nav>
+
+            <form action="../backend_work/search_results.php" method = $_POST>
+                <input type="text" name="search_query" value="" placeholder="Search Questions..."><br>
+                <input type='hidden' name="username" value = "<?php echo "$username" ?>"><br>
+            </form>
         </header>
 
         <main>

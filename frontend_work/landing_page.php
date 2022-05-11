@@ -16,9 +16,6 @@
             <aside id='logo-container'>
                 <img id="logo" src="../assets/algo-wiz-logo.png"/>
             </aside>
-            <form action="../backend_work/search_results.php" method = $_POST>
-                <input type="text" name="search_query" value="" placeholder="Search Questions..."><br>
-            </form>
 
             <nav>
                 <?php
@@ -30,6 +27,12 @@
                     echo "<p><a href='../index.php'>Logout</a></p>";
                 ?>
             </nav>
+
+            <form action="../backend_work/search_results.php" method = $_POST>
+                <input type="text" name="search_query" value="" placeholder="Search Questions..."><br>
+                <input type='hidden' name="username" value = "<?php echo "$username" ?>"><br>
+            </form>
+
         </header>
         <main id="question-area">
             <?php
@@ -91,7 +94,7 @@
                 
                     while($stmt->fetch())
                     {
-                        $link_question = "return_question_page.php?question_id_num=$question_id&username=$username";
+                        $link_question = "return_question_page.php?question_id_num=$question_id&username=$username&visit_username=false";
                         echo"<tr>";
                         echo "<td><a href=$link_question>$title</a></td>";
                         echo "<td><a href='user_profile.php?username=$username&visit_username=$visit_username'>$visit_username</a></td>";

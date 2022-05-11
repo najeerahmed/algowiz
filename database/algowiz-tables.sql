@@ -1,15 +1,20 @@
 -- Drop any if already present
 drop table if exists TopicHierarchy CASCADE;
-drop table if exists UserThumbs CASCADE;
-drop table if exists Answers CASCADE;
-drop table if exists Questions CASCADE;
+drop table if exists ThumbsDown CASCADE;
+drop table if exists ThumsUp CASCADE;
+
+
 drop table if exists UserStatus CASCADE;
 drop table if exists StatusDict CASCADE;
+
 drop table if exists Topic CASCADE;
 drop table if exists Users CASCADE;
-drop table if exists UsersLogin CASCADE;
+
 drop table if exists UsersInfo CASCADE;
 
+drop table if exists Answers CASCADE;
+drop table if exists Questions CASCADE;
+drop table if exists UsersLogin CASCADE;
 
 -- Create the Tables
 
