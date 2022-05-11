@@ -32,10 +32,35 @@
         </header>
 
         <main>
-            <form>
-                
-            </form>
+            <?php
+                // sql to retrieve a list of topics from the database
+                $sql = "
+                    select topic_id , topic_name
+                    from Topic;
+                ";
+                $result = mysqli_query($conn, $sql);
+                $topic_array = [];
 
+                while ($row = mysqli_fetch_assoc($result)){
+                    array_push($topic_array, $row['topic_name']);
+                }
+            
+                echo "
+                    <form>
+                        <input list='algo-topics'>
+                        <datalist id='algo-topics'>
+                    ";
+
+                for ($i = 0; $i < count($topic_array); $i++){
+                    echo "<option value=$topic_array[$i]>";
+                }
+
+                echo "
+      
+                        </datalist>
+                    </form>
+                "
+            ?>
         </main>
 
     </body>
