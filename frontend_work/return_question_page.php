@@ -21,6 +21,7 @@
             <nav>
                 <?php
                     $username = $_GET["username"];
+                    $visit_username = $_GET["visit_username"]; // get to redirect page after reaction
                     $lp_var = "landing_page.php?username=$username";
                     $pp_var = "user_profile.php?username=$username";
                     echo "<p><a href=$lp_var>Home</a></p>";
@@ -65,26 +66,25 @@
 
             <section id="answer-area">
                 <?php
-                    if ($stmt = $conn->prepare("SELECT a_text, username,a_time from Questions join Answers on (Questions.question_id = Answers.question_id) join UsersLogin on (Answers.user_id = UsersLogin.user_id) where Questions.question_id=?")) {
+                    if ($stmt = $conn->prepare("SELECT answer_id, a_text, username,a_time from Questions join Answers on (Questions.question_id = Answers.question_id) join UsersLogin on (Answers.user_id = UsersLogin.user_id) where Questions.question_id=?")) {
                         $stmt->bind_param("i", $question_id);
                         $stmt->execute();
-                        $stmt->bind_result($a_text, $username, $a_time);
+                        $stmt->bind_result($answer_id, $a_text, $answer_username, $a_time);
 
                         while($stmt->fetch())
                         {
+                            // retrieve username of the answerer to add to their points after like or dislike
                             echo "
                             <section class='answer'>
                                 <div class='text-area'>
-                                    <p>$username</p>
+                                    <p>$answer_username</p> 
                                     <p>$a_text</p>
                                     <p>$a_time</p>
                                 </div>
 
                                 <form class='bt-area' method='GET' action='../backend_work/update_like_dislike.php'>
-                                    
-                                    <button id='bt-like' class='reaction-button' name='bt' value ='like'><img class='reaction-image' src='../assets/like_button.png'/></button>
-                                    <button id='bt-dislike' class='reaction-button' name='bt' value = 'dislike'><img class='reaction-image' src='../assets/dislike_button.png'/></button>
-                                
+                                    <button id='bt-like' class='reaction-button' name='bt' value ='like $username $answer_username $visit_username $answer_id $question_id'><img class='reaction-image' src='../assets/like_button.png'/></button>
+                                    <button id='bt-dislike' class='reaction-button' name='bt' value = 'dislike $username $answer_username $visit_username $answer_id $question_id'><img class='reaction-image' src='../assets/dislike_button.png'/></button>
                                 </form>
                             </section>
                             ";
