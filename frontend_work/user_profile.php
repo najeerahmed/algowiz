@@ -193,6 +193,35 @@
                     }
                 }
 
+                $visit_username = $_GET["visit_username"];
+                if ($visit_username === 'false'){
+                    echo "<h4 class='title-activity'>Recent Responses to your Questions</h4>";
+                    if ($stmt = $conn->prepare("with my_questions as(
+                        SELECT Questions.question_id, title from Questions join UsersLogin on (Questions.user_id = UsersLogin.user_id) where UsersLogin.username = '$username' order by q_time desc
+                        )
+                        
+                        select my_questions.question_id,my_questions.title, Answers.a_text, UsersLogin.username
+                        from Answers join my_questions on (Answers.question_id = my_questions.question_id) join UsersLogin on (Answers.user_id = UsersLogin.user_id) order by Answers.a_time desc limit 10")) {
+                        $stmt->execute();
+                        $stmt->bind_result($question_id,$title,$a_text, $ans_user);
+                        echo "<table border = '1'>
+                        <tr>
+                        </tr>";
+                    
+                        while($stmt->fetch())
+                        {
+                            $link_question = "return_question_page.php?question_id_num=$question_id&username=$username&visit_username=false";
+                            $link_profile = "user_profile.php?username=$username&visit_username=$ans_user";
+                            echo"<tr>";
+                            echo "<td><a href=$link_question>$title</a></td>";
+                            echo "<td><a href=$link_profile>$ans_user</a></td>";
+                            echo"</tr>";
+                        }
+                        echo "</table>";
+                        $stmt->close();
+                    }
+                }
+
             ?>
         </main>
     </body>
