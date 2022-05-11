@@ -137,7 +137,6 @@
         $points_add = $row["points_add"];
     }
     
-    
     $sql_udpate_points = "
         UPDATE UsersInfo 
         set points = $points_add - $points_deduction
@@ -145,6 +144,28 @@
     ";
 
     mysqli_query($conn, $sql_udpate_points);
+
+
+    // update status of the person if he/she passes the point threshold
+    $sql_get_correct_status = "
+        select status_id
+        from StatusDict
+        where point_threshold < ($points_add - $points_deduction)
+        order by point_threshold desc
+        limit 1;
+    ";
+
+    // check if there is any result (in case the points are negative then don't need to do any update just leave the person at beginner's level)
+    $result = mysqli_query($conn, $sql_get_correct_status);
+    if (mysqli_num_rows($result) > 0){
+        $status = mysqli_fetch_assoc($result)['status_id'];
+        $sql_udpate_user_status = "
+            udpate UserStatus
+            set status_id = $status
+            where user_id = $auid;
+        ";
+    }
+
 
     header ("Location: ../frontend_work/return_question_page.php?question_id_num=$question_id&username=$username&visit_username=$visit_username");
 
