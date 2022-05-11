@@ -87,18 +87,6 @@ create table Answers(
     foreign key (question_id) references Questions(question_id)
 );
 
-
--- Create UserThumbs relation
-create table UserThumbs(
-    user_id integer,
-    answer_id integer,
-    thumbs boolean,
-    
-    primary key(user_id, answer_id),
-    foreign key (user_id) references UsersLogin(user_id),
-    foreign key (answer_id) references Answers(answer_id)
-);
-
 -- Create ThumbsUp relation
 create table ThumbsUp (
     user_id integer not null,

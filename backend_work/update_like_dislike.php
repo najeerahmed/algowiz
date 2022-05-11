@@ -96,9 +96,11 @@
             ";
             mysqli_query($conn, $sql_remove_like);
         }
-
-
     }
+    
+
+    // update the answerer points by totalting the number of thumbs up and subtracting the number of thumbs down
+    
 
     header ("Location: ../frontend_work/return_question_page.php?question_id_num=$question_id&username=$username&visit_username=$visit_username");
 
