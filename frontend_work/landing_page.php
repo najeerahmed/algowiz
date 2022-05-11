@@ -82,7 +82,7 @@
                 order by a_time desc
                 limit 10")) {
                     $stmt->execute();
-                    $stmt->bind_result($title,$username,$status_title,$question_id);
+                    $stmt->bind_result($title,$visit_username,$status_title,$question_id);
                     echo "<table border = '1'>
                     <tr>
                     </tr>";
@@ -92,7 +92,7 @@
                         $link_question = "return_question_page.php?question_id_num=$question_id&username=$username";
                         echo"<tr>";
                         echo "<td><a href=$link_question>$title</a></td>";
-                        echo "<td><a href='user_profile.php?username=$username&visit_username=$visit_username'>$username</a></td>";
+                        echo "<td><a href='user_profile.php?username=$username&visit_username=$visit_username'>$visit_username</a></td>";
                         echo"</tr>";
                     }
                     echo "</table>";

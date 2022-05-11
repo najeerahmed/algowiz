@@ -1,6 +1,11 @@
+:root {
+    --image-size: 40px;
+}
+
 main {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 #question-area {
@@ -8,6 +13,58 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 2px solid #440A5F;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#answer-area {
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.answer {
+    display: grid;
+    grid-template-areas:
+        "text buttons";
+    grid-template-columns: 9fr 1fr;
+    border: 2px solid #FBC200;
+}
+
+.text-area {
+    grid-area: text;
+}
+
+.bt-area {
+    grid-area: buttons;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.reaction-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: var(--image-size);
+    height: var(--image-size);
+    border-radius: 50%;
+    background-color: white;
+    transition-duration: 0.3s;
+}
+
+.reaction-button:hover {
+    cursor: pointer;
+}
+
+.reaction-image {
+    width: var(--image-size);
+    height: var(--image-size);
 }
 
 #asker-info {

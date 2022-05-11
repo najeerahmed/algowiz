@@ -55,10 +55,8 @@
                         {
                             echo "<h3>$title</h3>";
                             echo "<p>$q_text</p>";
-                            echo "<section id='asker-info'>";
                             echo "<p>$username_ask</p>";
                             echo "<p>$q_time</p>";
-                            echo "</section>";
                         }
                         $stmt->close();
                     }
@@ -74,15 +72,28 @@
 
                         while($stmt->fetch())
                         {
-                            echo "<p>$username</p>";
-                            echo "<p>$a_text</p>";
-                            echo "<p>$a_time</p>";
+                            echo "
+                            <section class='answer'>
+                                <div class='text-area'>
+                                    <p>$username</p>
+                                    <p>$a_text</p>
+                                    <p>$a_time</p>
+                                </div>
+
+                                <div class='bt-area'>
+                                    <button id='bt-like' class='reaction-button'><img class='reaction-image' src='../assets/like_button.png'/></button>
+                                    <button id='bt-dislike' class='reaction-button'><img class='reaction-image' src='../assets/dislike_button.png'/></button>
+                                </div>
+                            </section>
+                            ";
                         }
                         $stmt->close();
                     }
                 ?>
             </section>
         </main>
+
+        <script src="./js/register_reaction_button.js"></script>
     </body>
 
 </html>
