@@ -75,7 +75,7 @@
                     <h3>$rank,</h3>
                     <h3>$points points</h3>
                 </section>
-
+                         
                 <p>
                     <q>$short_desc</q>
                 </p>
@@ -90,7 +90,6 @@
                     <p id='address-info'>$city, $state, $country</p>
                 </section>
                 ";
-
             ?>
         </main>
     </body>

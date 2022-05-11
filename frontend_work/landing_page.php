@@ -92,7 +92,7 @@
                         $link_question = "return_question_page.php?question_id_num=$question_id&username=$username";
                         echo"<tr>";
                         echo "<td><a href=$link_question>$title</a></td>";
-                        echo "<td><a href='user_profile.php?username=$username'>$username</a></td>";
+                        echo "<td><a href='user_profile.php?username=$username&visit_username=$visit_username'>$username</a></td>";
                         echo"</tr>";
                     }
                     echo "</table>";
