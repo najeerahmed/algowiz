@@ -150,7 +150,7 @@
     $sql_get_correct_status = "
         select status_id
         from StatusDict
-        where point_threshold < ($points_add - $points_deduction)
+        where point_threshold <= ($points_add - $points_deduction)
         order by point_threshold desc
         limit 1;
     ";
@@ -160,10 +160,12 @@
     if (mysqli_num_rows($result) > 0){
         $status = mysqli_fetch_assoc($result)['status_id'];
         $sql_udpate_user_status = "
-            udpate UserStatus
+            UPDATE UserStatus
             set status_id = $status
             where user_id = $auid;
         ";
+
+        mysqli_query($conn, $sql_udpate_user_status);
     }
 
 
