@@ -184,13 +184,19 @@
 
             <!-- for the user to create an answer for the question -->
             <!-- need to add in action method to direct to the backend to register for the answer -->
-            <form id="response-area" method="GET" > 
-                <textarea id="response-box" placeholder="Enter your response"></textarea>
-                <input id="submit-response" type="submit" />
-            </form>
-        </main>
+            <?php
+                echo "
+                <form id='response-area' method='GET' action='../backend_work/register_answer.php'> 
+                    <textarea name='response' id='response-box' placeholder='Enter your response'></textarea>
+                    <input type='hidden' name='username' value='$username'/>
+                    <input type='hidden' name='question_id' value='$question_id'/>
+                    <input type='hidden' name='visit_username' value='$visit_username'/>
+                    <input id='submit-response' type='submit' />
+                </form>
+                ";
 
-        <script src="./js/register_reaction_button.js"></script>
+            ?>
+        </main>
     </body>
 
 </html>

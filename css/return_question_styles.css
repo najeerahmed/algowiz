@@ -61,6 +61,7 @@ main > * {
 
 .reaction-button:hover {
     cursor: pointer;
+    background-color: #440A5F;
 }
 
 .reaction-image {
