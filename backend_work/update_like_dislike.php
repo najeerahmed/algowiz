@@ -184,11 +184,29 @@
             set thumbs_up = $total_thumbs_up
             where answer_id = $answer_id;
         ";
+
+        mysqli_query($conn, $sql_update_like_post);
     }
 
-    // update for answer total dislike column
-    
+    $sql_get_thumbs_down = "
+        select count(ThumbsDown.user_id) as total_thumbs_down
+        from ThumbsDown join Answers on ThumbsDown.answer_id = Answers.answer_id
+        where Answers.answer_id = $answer_id;
+    ";
 
+    // update for answer total dislike column
+    $result = mysqli_query($conn, $sql_get_thumbs_down);
+    if (mysqli_num_rows($result) > 0){
+        $row = mysqli_fetch_assoc($result);
+        $total_thumbs_down = $row["total_thumbs_down"];
+        $sql_update_dislike_post = "
+            update Answers
+            set thumbs_down = $total_thumbs_down
+            where answer_id = $answer_id;
+        ";
+
+        mysqli_query($conn, $sql_update_dislike_post);
+    }
 
     header ("Location: ../frontend_work/return_question_page.php?question_id_num=$question_id&username=$username&visit_username=$visit_username");
 
