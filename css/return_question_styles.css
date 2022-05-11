@@ -8,21 +8,22 @@ main {
     gap: 10px;
 }
 
+main > * {
+    margin-left: 100px; 
+    margin-right: 100px;
+}
+
 #question-area {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 2px solid #440A5F;
-    margin-left: 100px;
-    margin-right: 100px;
 }
 
-#answer-area {
+#answered-area {
     display: flex;
     flex-direction: column;
-    margin-left: 100px;
-    margin-right: 100px;
 }
 
 .answer {

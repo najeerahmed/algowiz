@@ -64,7 +64,7 @@
                 ?>
             </section>
 
-            <section id="answer-area">
+            <section id="answered-area">
                 <?php
                     if ($stmt = $conn->prepare("SELECT answer_id, a_text, username,a_time from Questions join Answers on (Questions.question_id = Answers.question_id) join UsersLogin on (Answers.user_id = UsersLogin.user_id) where Questions.question_id=?")) {
                         $stmt->bind_param("i", $question_id);
@@ -93,6 +93,11 @@
                     }
                 ?>
             </section>
+
+            <!-- for the user to create an answer for the question -->
+            <form id="response-area">
+                <input type="text-area" />
+            </form>
         </main>
 
         <script src="./js/register_reaction_button.js"></script>
