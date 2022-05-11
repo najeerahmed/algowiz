@@ -41,24 +41,29 @@
                     from Topic;
                 ";
                 $result = mysqli_query($conn, $sql);
+                $topic_id_array = [];
                 $topic_array = [];
 
                 while ($row = mysqli_fetch_assoc($result)){
+                    array_push($topic_id_array, $row['topic_id']);
                     array_push($topic_array, $row['topic_name']);
                 }
             
                 echo "
-                    <form id='question-form'>
+                    <form method='GET' id='question-form' action='../backend_work/register_question.php'>
+                        <input type='hidden' name='username' value='$username'/>
                         <select name='algo-topic-list' #id='algo-topic-list''>
                             <option value = '' disabled selected hidden >Select Algo Topics</option>
                     ";
 
                 for ($i = 0; $i < count($topic_array); $i++){
-                    echo "<option value=$topic_array[$i]>$topic_array[$i]</option>";
+                    echo "<option name='topic-id' value='$topic_id_array[$i]'>$topic_array[$i]</option>";
                 }
 
                 echo "
-                        <textarea id='question-box' placeholder='Enter your question here...'></textarea>
+                        </select>
+                        <input type='text' name='title' placeholder='Enter A Title...'/>
+                        <textarea id='question-box' name='question' placeholder='Enter your question here...' required></textarea>
                         <input type='submit'/>
                     </form>
                 "
