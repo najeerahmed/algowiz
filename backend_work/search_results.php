@@ -50,19 +50,26 @@
                         #$stmt->bind_param("s", $search_query);
                         $stmt->execute();
                         $stmt->bind_result($title, $qtime,$question_id);
+                        $stmt->store_result();
                         echo "<table border = '1'>
                         <tr>
                         </tr>";
-                    
-                        while($stmt->fetch())
-                        {
-                            $link_question = "../frontend_work/return_question_page.php?question_id_num=$question_id&username=$username&visit_username=false";
-                            echo"<tr>";
-                            echo "<td><a href=$link_question>$title</a></td>";
-                            echo"</tr>";
+                        if (($stmt->num_rows) < 1) {
+                            echo "No results found, please try searching for something else.";
                         }
-                        echo "</table>";
-                        $stmt->close();
+                    
+                        else {
+                            while($stmt->fetch())
+                            {
+                                $link_question = "../frontend_work/return_question_page.php?question_id_num=$question_id&username=$username&visit_username=false";
+                                echo"<tr>";
+                                echo "<td><a href=$link_question>$title</a></td>";
+                                echo"</tr>";
+                            }
+                            echo "</table>";
+                            $stmt->close();
+                        }
+
                     }
 
                 ?>
