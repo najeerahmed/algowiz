@@ -8,7 +8,7 @@
         <?php
             $username = $_GET["username"];
             $visit_username = $_GET["visit_username"];
-            if ($visit_username === 'false'){
+            if ($visit_username === 'false' or $visit_username === $username){
                 $sql = "
                     select uname, status_title, points, email, city, state, country, dob, short_desc
                     from UsersLogin natural join UsersInfo
@@ -92,5 +92,115 @@
                 ";
             ?>
         </main>
+        <main> 
+        <?php // Recently Posted Questions from User Profie
+                echo "<h3 class='title'>Recently Posted Questions</h3>";
+                if ($visit_username === 'false'){
+                    if ($stmt = $conn->prepare("SELECT title, question_id, username from Questions join UsersLogin on (Questions.user_id = UsersLogin.user_id) where UsersLogin.username = '$username' order by q_time desc limit 10")) {
+                        $stmt->execute();
+                        $stmt->bind_result($title,$question_id,$visit_username);
+                        echo "<table border = '1'>
+                        <tr>
+                        </tr>";
+                    
+                        while($stmt->fetch())
+                        {
+                            if ($visit_username = $username) {
+                                $link_question = "return_question_page.php?question_id_num=$question_id&username=$visit_username&visit_username=false";
+                            }
+                            else{
+                                $link_question = "return_question_page.php?question_id_num=$question_id&username=$username&visit_username=$visit_username";
+                            }
+                            
+                            $link_profile = "user_profile.php?username=$username&visit_username=false";
+                            echo"<tr>";
+                            echo "<td><a href=$link_question>$title</a></td>";
+                            echo "<td><a href=$link_profile>$visit_username</a></td>";
+                            echo"</tr>";
+                        }
+                        echo "</table>";
+                        $stmt->close();
+                    }
+                }
+                else {
+                    if ($stmt = $conn->prepare("SELECT title, question_id, username from Questions join UsersLogin on (Questions.user_id = UsersLogin.user_id) where UsersLogin.username = '$visit_username' order by q_time desc limit 10")) {
+                        $stmt->execute();
+                        $stmt->bind_result($title,$question_id,$visit_username);
+                        echo "<table border = '1'>
+                        <tr>
+                        </tr>";
+                    
+                        while($stmt->fetch())
+                        {
+                            $link_question = "return_question_page.php?question_id_num=$question_id&username=$username&visit_username=$visit_username";
+                            $link_profile = "user_profile.php?username=$username&visit_username=$visit_username";
+                            echo"<tr>";
+                            echo "<td><a href=$link_question>$title</a></td>";
+                            echo "<td><a href=$link_profile>$visit_username</a></td>";
+                            echo"</tr>";
+                        }
+                        echo "</table>";
+                        $stmt->close();
+                    }
+                }
+
+            ?>
+            </main>
+
+            <main>
+        <?php
+                echo "<h3 class='title'>Recently Posted Answers</h3>";
+                if ($visit_username === 'false'){
+                    if ($stmt = $conn->prepare("SELECT title, UsersLogin.username, status_title, Answers.question_id
+                    from Answers join UsersLogin on (Answers.user_id = UsersLogin.user_id) join Questions on (Answers.question_id = Questions.question_id) join UserStatus on (UsersLogin.user_id = UserStatus.user_id) join StatusDict on (UserStatus.status_id = StatusDict.status_id) where UsersLogin.username='$username'
+                    order by a_time desc
+                    limit 10")) {
+                        $stmt->execute();
+                        $stmt->bind_result($title,$visit_username,$status_title,$question_id);
+                        echo "<table border = '1'>
+                        <tr>
+                        </tr>";
+                    
+                        while($stmt->fetch())
+                        {
+                            $link_question = "return_question_page.php?question_id_num=$question_id&username=$username&visit_username=$visit_username";
+                            $link_profile = "user_profile.php?username=$username&visit_username=false";
+                            echo"<tr>";
+                            echo "<td><a href=$link_question>$title</a></td>";
+                            echo "<td><a href=$link_profile>$visit_username</a></td>";
+                            echo"</tr>";
+                        }
+                        echo "</table>";
+                        $stmt->close();
+                    }
+                }
+                else {
+                    if ($stmt = $conn->prepare("SELECT title, UsersLogin.username, status_title, Answers.question_id
+                    from Answers join UsersLogin on (Answers.user_id = UsersLogin.user_id) join Questions on (Answers.question_id = Questions.question_id) join UserStatus on (UsersLogin.user_id = UserStatus.user_id) join StatusDict on (UserStatus.status_id = StatusDict.status_id) where UsersLogin.username = '$visit_username'
+                    order by a_time desc
+                    limit 10")) {
+                        $stmt->execute();
+                        $stmt->bind_result($title,$visit_username,$status_title,$question_id);
+                        echo "<table border = '1'>
+                        <tr>
+                        </tr>";
+                    
+                        while($stmt->fetch())
+                        {
+                            $link_question = "return_question_page.php?question_id_num=$question_id&username=$username&visit_username=$visit_username";
+                            $link_profile = "user_profile.php?username=$username&visit_username=$visit_username";
+                            echo"<tr>";
+                            echo "<td><a href=$link_question>$title</a></td>";
+                            echo "<td><a href=$link_profile>$visit_username</a></td>";
+                            echo"</tr>";
+
+                        }
+                        echo "</table>";
+                        $stmt->close();
+                    }
+                }
+
+            ?>
+            </main>
     </body>
 </html>
