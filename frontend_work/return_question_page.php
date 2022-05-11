@@ -23,7 +23,7 @@
                     $username = $_GET["username"];
                     $visit_username = $_GET["visit_username"]; // get to redirect page after reaction
                     $lp_var = "landing_page.php?username=$username";
-                    $pp_var = "user_profile.php?username=$username";
+                    $pp_var = "user_profile.php?username=$username&visit_username=false";
                     echo "<p><a href=$lp_var>Home</a></p>";
                     echo "<p><a href=$pp_var>Profile</a></p>";
                     echo "<p><a href='../index.php'>Logout</a></p>";

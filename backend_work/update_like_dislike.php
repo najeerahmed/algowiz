@@ -18,8 +18,18 @@
         where username = '$username';
     ";
 
+    // SQL query to retrieve answerer's user id
+    $sql_answer_uid = "
+        select user_id
+        from UsersLogin
+        where username = '$answer_username';
+    ";
+
     $result = mysqli_query($conn, $sql_uid);
     $uid = mysqli_fetch_assoc($result)["user_id"];
+
+    $result = mysqli_query($conn, $sql_answer_uid);
+    $auid = mysqli_fetch_assoc($result)["user_id"];
 
     // check if the section is already liked
     $sql_liked = "
@@ -102,7 +112,7 @@
     $sql_get_num_dislike = "
         select count(Answers.answer_id) as points_deduction
         from Answers join ThumbsDown on Answers.answer_id = ThumbsDown.answer_id
-        where Answers.user_id = $uid
+        where Answers.user_id = $auid
         group by Answers.user_id;
     ";
 
@@ -116,7 +126,7 @@
     $sql_get_num_like = "
         select count(Answers.answer_id) as points_add
         from Answers join ThumbsUp on Answers.answer_id = ThumbsUp.answer_id
-        where Answers.user_id = $uid
+        where Answers.user_id = $auid
         group by Answers.user_id;
     ";
 
@@ -131,7 +141,7 @@
     $sql_udpate_points = "
         UPDATE UsersInfo 
         set points = $points_add - $points_deduction
-        where user_id = $uid
+        where user_id = $auid
     ";
 
     mysqli_query($conn, $sql_udpate_points);
