@@ -17,6 +17,11 @@
                 <img id="logo" src="../assets/algo-wiz-logo.png"/>
             </aside>
 
+            <form id='search-form' action="../backend_work/search_results.php" method = $_POST>
+                <input type="text" name="search_query" value="" placeholder="Search Questions...">
+                <input type='hidden' name="username" value = "<?php echo "$username" ?>">
+            </form>
+
             <nav>
                 <?php
                     $username = $_GET["username"];
@@ -27,11 +32,6 @@
                     echo "<p><a href='../index.php'>Logout</a></p>";
                 ?>
             </nav>
-
-            <form action="../backend_work/search_results.php" method = $_POST>
-                <input type="text" name="search_query" value="" placeholder="Search Questions..."><br>
-                <input type='hidden' name="username" value = "<?php echo "$username" ?>"><br>
-            </form>
 
         </header>
         <main id="question-area">

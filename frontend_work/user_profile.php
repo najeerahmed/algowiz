@@ -50,9 +50,16 @@
     </head>
     <body>
         <header>
-            <img id="logo" src="../assets/algo-wiz-logo.png"/>
-            <nav>
-                
+            <section id='logo-container'>
+                <img id="logo" src="../assets/algo-wiz-logo.png"/>
+            </section>
+
+            <form action="../backend_work/search_results.php" method = $_POST>
+                <input type="text" name="search_query" value="" placeholder="Search Questions...">
+                <input type='hidden' name="username" value = "<?php echo "$username" ?>">
+            </form>
+
+            <nav>    
                 <?php
                     $lp_var = "landing_page.php?username=$username";
                     $pp_var = "user_profile.php?username=$username&visit_username=false";
@@ -61,11 +68,6 @@
                     echo "<p><a href='../index.php'>Logout</a></p>";   
                 ?>
             </nav>
-
-            <form action="../backend_work/search_results.php" method = $_POST>
-                <input type="text" name="search_query" value="" placeholder="Search Questions..."><br>
-                <input type='hidden' name="username" value = "<?php echo "$username" ?>"><br>
-            </form>
         </header>
 
         <main>
@@ -92,11 +94,9 @@
                     <p id='address-info'>$city, $state, $country</p>
                 </section>
                 ";
-            ?>
-        </main>
-        <main> 
-        <?php // Recently Posted Questions from User Profie
-                echo "<h3 class='title'>Your Questions</h3>";
+            
+                // Recently Posted Questions from User Profie
+                echo "<h4 class='title-activity'>Questions Recently Posted</h4>";
                 if ($visit_username === 'false'){
                     if ($stmt = $conn->prepare("SELECT title, question_id, username from Questions join UsersLogin on (Questions.user_id = UsersLogin.user_id) where UsersLogin.username = '$username' order by q_time desc limit 10")) {
                         $stmt->execute();
@@ -144,12 +144,7 @@
                     }
                 }
 
-            ?>
-            </main>
-
-            <main>
-        <?php
-                echo "<h3 class='title'>Questions You've Answered</h3>";
+                echo "<h4 class='title-activity'>Questions Recently Answered</h4>";
                 if ($visit_username === 'false'){
                     if ($stmt = $conn->prepare("SELECT title, UsersLogin.username, status_title, Answers.question_id
                     from Answers join UsersLogin on (Answers.user_id = UsersLogin.user_id) join Questions on (Answers.question_id = Questions.question_id) join UserStatus on (UsersLogin.user_id = UserStatus.user_id) join StatusDict on (UserStatus.status_id = StatusDict.status_id) where UsersLogin.username='$username'
@@ -199,6 +194,6 @@
                 }
 
             ?>
-            </main>
+        </main>
     </body>
 </html>

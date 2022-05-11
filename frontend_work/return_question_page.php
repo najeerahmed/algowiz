@@ -29,8 +29,8 @@
             </nav>
 
             <form action="../backend_work/search_results.php" method = $_POST>
-                <input type="text" name="search_query" value="" placeholder="Search Questions..."><br>
-                <input type='hidden' name="username" value = "<?php echo "$username" ?>"><br>
+                <input type="text" name="search_query" value="" placeholder="Search Questions...">
+                <input type='hidden' name="username" value = "<?php echo "$username" ?>">
             </form>
             
         </header>
