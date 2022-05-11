@@ -168,9 +168,28 @@
         mysqli_query($conn, $sql_udpate_user_status);
     }
 
+    $sql_get_thumbs_up = "
+        select count(ThumbsUp.user_id) as total_thumbs_up
+        from ThumbsUp join Answers on ThumbsUp.answer_id = Answers.answer_id
+        where Answers.answer_id = $answer_id;
+    ";
+
+    // update for answer total like column
+    $result = mysqli_query($conn, $sql_get_thumbs_up);
+    if (mysqli_num_rows($result) > 0){
+        $row = mysqli_fetch_assoc($result);
+        $total_thumbs_up = $row["total_thumbs_up"];
+        $sql_update_like_post = "
+            update Answers
+            set thumbs_up = $total_thumbs_up
+            where answer_id = $answer_id;
+        ";
+    }
+
+    // update for answer total dislike column
+    
+
 
     header ("Location: ../frontend_work/return_question_page.php?question_id_num=$question_id&username=$username&visit_username=$visit_username");
 
 ?>
-
-// should be using the answer id to update score instead of uid - should double check again
