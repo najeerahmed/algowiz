@@ -32,14 +32,16 @@
             </nav>
         </header>
         <main id="question-area">
-
-            <a href="./ask_question.php">
-                <button id='bt-ask-question'>
-                    Ask a question
-                </button>
-            </a>
-
             <?php
+                echo"
+                    <a href='./ask_question.php?username=$username'>
+                    <button id='bt-ask-question'>
+                        Ask a question
+                    </button>
+                    </a>
+                "
+
+
                 $sql_recent_questions = "
                 select title, q_time
                 from Questions
