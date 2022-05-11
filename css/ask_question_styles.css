@@ -19,3 +19,7 @@ form > * {
     width: 600px;
     height: 300px;
 }
+
+.announcement {
+    color: #C20232;
+}

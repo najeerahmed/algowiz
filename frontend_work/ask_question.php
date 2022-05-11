@@ -62,11 +62,16 @@
 
                 echo "
                         </select>
-                        <input type='text' name='title' placeholder='Enter A Title...'/>
+                        <input type='text' name='title' placeholder='Enter A Title...' required/>
                         <textarea id='question-box' name='question' placeholder='Enter your question here...' required></textarea>
                         <input type='submit'/>
                     </form>
-                "
+                ";
+
+                $success = $_GET['success'];
+                if ($success === 'true'){
+                    echo "<p .class='announcement'>YOUR QUESTION HAS BEEN SUBMITTED!</p>";
+                }
             ?>
         </main>
 

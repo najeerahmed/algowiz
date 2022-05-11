@@ -37,7 +37,7 @@
         <main id="question-area">
             <?php
                 echo"
-                    <a href='./ask_question.php?username=$username'>
+                    <a href='./ask_question.php?username=$username&success=false'>
                     <button id='bt-ask-question'>
                         Ask a question
                     </button>
