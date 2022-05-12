@@ -17,6 +17,13 @@ main {
     gap: 5px;
 }
 
+#edit_section {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    gap:5px
+}
+
 #personal_information {
     display: grid;
     grid-template-areas: 
