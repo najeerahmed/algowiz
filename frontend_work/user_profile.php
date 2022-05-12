@@ -8,7 +8,7 @@
         <?php
             $username = $_GET["username"];
             $visit_username = $_GET["visit_username"];
-            if ($visit_username === 'false' or $visit_username === $username){
+            if ($visit_username === 'false'){
                 $sql = "
                     select uname, status_title, points, email, city, state, country, dob, short_desc
                     from UsersLogin natural join UsersInfo

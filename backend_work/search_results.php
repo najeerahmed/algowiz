@@ -36,7 +36,7 @@
                     $search_query = $_GET['search_query'];
                     $sql_query = "with Search as(
 
-                        select *, MATCH(q_text) AGAINST ('+$search_query?*' in boolean MODE) as text_score, match(title) against ('+algo*' in boolean mode) as title_score
+                        select *, MATCH(q_text) AGAINST ('+$search_query?*' in boolean MODE) as text_score, match(title) against ('+$search_query*' in boolean mode) as title_score
                         from Questions join Topic using (topic_id)
                         where MATCH(title, q_text) against ('+$search_query*' in boolean mode)
                         order by text_score*0.2+title_score desc
