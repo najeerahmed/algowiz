@@ -96,12 +96,15 @@
                 ";
                 ?>
                 
+            <?php if ($visit_username === "false") :?>
                 <section id='edit_information'>
-                    <form name = "edit" method =$_POST action="../frontend_work/edit_profile.php">
-                    <input type = "submit" name = "" value="Edit Profile...">
+                    <form name = 'edit' method =$_POST action='../frontend_work/edit_profile.php'>
+                    <input type = 'submit' name = '' value='Edit Profile...'>
                     <input type='hidden' name="username" value = "<?php echo "$username" ?>">
                     </form>
                 </section>
+            <?php endif; ?>
+
                 
                 <?php
                 // Recently Posted Questions from User Profie
