@@ -30,6 +30,12 @@
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_assoc($result); // should only be one row
 
+            // if (mysqli_num_rows($result) < 1){
+            //     $name = "New User";
+            //     $rank = "N/A";
+            //     $points = 
+            // }
+            
             $name = $row["uname"];
             $rank = $row["status_title"];
             $points = $row["points"];
