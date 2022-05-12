@@ -17,7 +17,8 @@
                 <img id="logo" src="../assets/algo-wiz-logo.png"/>
             </aside>
             <form action="../backend_work/search_results.php" method = $_POST>
-                <input type="text" name="search_query" value="" placeholder="Search Questions..."><br>
+                <input type="text" name="search_query" value="" placeholder="Search Questions..." required>
+                <input type='hidden' name="username" value = "<?php echo "$username" ?>">
             </form>
 
             <nav>
