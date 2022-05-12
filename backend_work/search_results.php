@@ -24,6 +24,12 @@
                     echo "<p><a href='../index.php'>Logout</a></p>";
                 ?>
             </nav>
+
+            <form id='search-form' action="../backend_work/search_results.php" method = $_POST>
+                <input type="text" name="search_query" value="" placeholder="Search Questions..." required>
+                <input type='hidden' name="username" value = "<?php echo "$username" ?>">
+            </form>
+            
         </header>
     
         <main id="question-area" method=$_POST>
