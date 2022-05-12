@@ -31,7 +31,7 @@
 
             <form>
                 <fieldset>
-                <legend>Recently Posted Questions</legend>
+                <legend>Search Results</legend>
                 <?php
                     $search_query = $_GET['search_query'];
                     $sql_query = "with Search as(
